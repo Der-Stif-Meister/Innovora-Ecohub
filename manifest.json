@@ -1,0 +1,70 @@
+{
+  "name": "INNOVORA EcoHub Group - Sustainability Initiative",
+  "short_name": "INNOVORA",
+  "description": "Transform waste into opportunity. Empowering youth for a sustainable future.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1e4226",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/photo_2026-04-14_11-41-52.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/photo_2026-04-14_11-41-52.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/photo_2026-04-14_11-41-55.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["sustainability", "environment", "education"],
+  "screenshots": [
+    {
+      "src": "assets/photo_2026-04-14_11-41-55.jpg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About INNOVORA",
+      "short_name": "About",
+      "description": "Learn more about our mission",
+      "url": "/index.html#about"
+    },
+    {
+      "name": "Our Projects",
+      "short_name": "Projects",
+      "description": "Explore our featured projects",
+      "url": "/index.html#projects"
+    },
+    {
+      "name": "Get Involved",
+      "short_name": "Join",
+      "description": "Join the sustainability movement",
+      "url": "/index.html#join"
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

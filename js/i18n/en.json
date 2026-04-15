@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "focus": "Focus Areas",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Turning Waste Into Opportunity",
+    "subtitle": "Empowering Youth for a Sustainable Future",
+    "description": "INNOVORA EcoHub Group is a forward-thinking sustainability initiative dedicated to transforming environmental challenges into innovative solutions. We believe in the power of youth to create lasting positive change for our planet.",
+    "btn1": "Join the Movement",
+    "btn2": "Explore Our Projects",
+    "btn3": "Partnership Opportunities"
+  },
+  "about": {
+    "title": "Who We Are",
+    "subtitle": "Leading the Global Sustainability Revolution",
+    "desc1": "INNOVORA EcoHub Group stands at the intersection of innovation and environmental stewardship. We are a community of young changemakers, environmental enthusiasts, and sustainability champions working together to address the pressing challenges of our time.",
+    "quote": "Waste is not the end of a product's life—it is the beginning of new possibilities.",
+    "desc2": "Our mission is to create sustainable solutions that benefit both people and the planet. Through education, innovation, and community engagement, we are building a future where sustainability is not just a goal—it's a way of life. With operations spanning multiple continents, INNOVORA is redefining what it means to be a sustainable corporation."
+  },
+  "focus": {
+    "title": "Our Focus Areas",
+    "card1": {
+      "title": "Waste to Wealth",
+      "desc": "Transforming agricultural and industrial waste into valuable resources and economic opportunities for communities."
+    },
+    "card2": {
+      "title": "Climate Awareness",
+      "desc": "Educating and mobilizing communities to understand climate change and take meaningful action toward carbon neutrality."
+    },
+    "card3": {
+      "title": "Youth Innovation",
+      "desc": "Empowering young minds to develop creative and sustainable solutions to environmental challenges."
+    },
+    "card4": {
+      "title": "Community Impact",
+      "desc": "Building strong local partnerships to create lasting environmental and social impact in our communities."
+    }
+  },
+  "projects": {
+    "title": "Featured Project: Cocoa Husks Sustainability",
+    "imageText": "Transforming Agricultural Waste",
+    "projectTitle": "From Waste to Value",
+    "desc": "Our flagship project focuses on transforming cocoa husks—agricultural waste typically discarded during cocoa processing—into sustainable, high-value products. This initiative has multiple benefits:",
+    "benefit1": "Environmental Impact: Reduces agricultural waste and deforestation pressure",
+    "benefit2": "Economic Opportunity: Creates income streams for farmers and local communities",
+    "benefit3": "Innovation: Develops new sustainable materials and products",
+    "benefit4": "Youth Engagement: Provides training and employment for young people",
+    "partnership": "Through partnerships with local farmers, artisans, and businesses, we're proving that sustainability and profitability go hand in hand."
+  },
+  "join": {
+    "title": "Join the Movement",
+    "desc": "Be part of a community that's making real change happen. Whether you're an innovator, volunteer, partner, or supporter, there's a place for you in the INNOVORA family.",
+    "btn1": "Become a Volunteer",
+    "btn2": "Partner With INNOVORA"
+  },
+  "founder": {
+    "quote": "INNOVORA started from a simple belief: young people can lead the solutions our environment needs. Every action, no matter how small, contributes to a larger movement toward a sustainable future.",
+    "name": "Godfred Arhin",
+    "title": "Founder, INNOVORA EcoHub Group"
+  },
+  "footer": {
+    "tagline": "Innovating for Climate • Sustainability • Environment",
+    "links": "Quick Links",
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact",
+    "follow": "Follow Us",
+    "contactTitle": "Contact",
+    "copyright": "© 2026 Innovora EcoHub Group. All rights reserved. | Innovating for a sustainable future."
+  "language": "Language"
+}

@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "focus": "Áreas de Enfoque",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Convirtiendo Residuos en Oportunidades",
+    "subtitle": "Empoderando a los Jóvenes para un Futuro Sostenible",
+    "description": "INNOVORA EcoHub Group es una iniciativa de sostenibilidad progresista dedicada a transformar desafíos ambientales en soluciones innovadoras. Creemos en el poder de la juventud para crear un cambio positivo duradero para nuestro planeta.",
+    "btn1": "Únete al Movimiento",
+    "btn2": "Explora Nuestros Proyectos",
+    "btn3": "Oportunidades de Asociación"
+  },
+  "about": {
+    "title": "Quiénes Somos",
+    "subtitle": "Liderando la Revolución Global de la Sostenibilidad",
+    "desc1": "INNOVORA EcoHub Group se encuentra en la intersección de la innovación y la administración ambiental. Somos una comunidad de agentes de cambio, entusiastas del medio ambiente y campeones de la sostenibilidad trabajando juntos para abordar los desafíos más urgentes de nuestro tiempo.",
+    "quote": "El desperdicio no es el final de la vida de un producto, es el comienzo de nuevas posibilidades.",
+    "desc2": "Nuestra misión es crear soluciones sostenibles que beneficien tanto a las personas como al planeta. A través de la educación, la innovación y el compromiso comunitario, estamos construyendo un futuro donde la sostenibilidad no es solo una meta, sino una forma de vida. Con operaciones en múltiples continentes, INNOVORA está redefiniendo lo que significa ser una corporación sostenible."
+  },
+  "focus": {
+    "title": "Nuestras Áreas de Enfoque",
+    "card1": {
+      "title": "Residuos a Riqueza",
+      "desc": "Transformar residuos agrícolas e industriales en recursos valiosos y oportunidades económicas para las comunidades."
+    },
+    "card2": {
+      "title": "Conciencia Climática",
+      "desc": "Educando y movilizando comunidades para comprender el cambio climático y tomar acciones significativas hacia la neutralidad de carbono."
+    },
+    "card3": {
+      "title": "Innovación Juvenil",
+      "desc": "Empoderando mentes jóvenes para desarrollar soluciones creativas y sostenibles a los desafíos ambientales."
+    },
+    "card4": {
+      "title": "Impacto Comunitario",
+      "desc": "Construyendo asociaciones locales sólidas para crear impacto ambiental y social duradero en nuestras comunidades."
+    }
+  },
+  "projects": {
+    "title": "Proyecto Destacado: Sostenibilidad de Cáscaras de Cacao",
+    "projectTitle": "De Residuos a Valor",
+    "desc": "Nuestro proyecto insignia se enfoca en transformar cáscaras de cacao—residuos agrícolas generalmente descartados durante el procesamiento del cacao—en productos sostenibles de alto valor.",
+    "benefit1": "Impacto Ambiental: Reduce residuos agrícolas y la presión de deforestación",
+    "benefit2": "Oportunidad Económica: Crea flujos de ingresos para agricultores y comunidades locales",
+    "benefit3": "Innovación: Desarrolla nuevos materiales y productos sostenibles",
+    "benefit4": "Compromiso Juvenil: Proporciona capacitación y empleo para jóvenes",
+    "closing": "A través de asociaciones con agricultores locales, artesanos y empresas, estamos probando que la sostenibilidad y la rentabilidad van de la mano."
+  },
+  "join": {
+    "title": "Únete al Movimiento",
+    "desc": "Sé parte de una comunidad que está generando cambios reales. Ya sea innovador, voluntario, socio o simpatizante, hay un lugar para ti en la familia INNOVORA.",
+    "btn1": "Conviértete en Voluntario",
+    "btn2": "Asociarse con INNOVORA"
+  },
+  "founder": {
+    "quote": "INNOVORA comenzó con una creencia simple: los jóvenes pueden liderar las soluciones que nuestro medio ambiente necesita. Cada acción, sin importar cuán pequeña sea, contribuye a un movimiento más grande hacia un futuro sostenible.",
+    "name": "Godfred Arhin",
+    "title": "Fundador, INNOVORA EcoHub Group"
+  },
+  "footer": {
+    "tagline": "Innovando para el Clima • Sostenibilidad • Medio Ambiente",
+    "quickLinks": "Enlaces Rápidos",
+    "followUs": "Síguenos",
+    "contact": "Contacto",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "copyright": "© 2026 INNOVORA EcoHub Group. Todos los derechos reservados. | Innovando para un futuro sostenible.",
+    "home": "Inicio",
+    "aboutUs": "Acerca de Nosotros",
+    "projects": "Proyectos",
+    "contactUs": "Contacto"
+  },
+  "language": "Idioma"
+}

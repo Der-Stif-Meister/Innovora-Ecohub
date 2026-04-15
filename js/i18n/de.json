@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "focus": "Schwerpunktbereiche",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Abfall in Chancen umwandeln",
+    "subtitle": "Die Jugend für eine nachhaltige Zukunft stärken",
+    "description": "INNOVORA EcoHub Group ist eine zukunftsorientierte Nachhaltigkeitsinitiative, die Umweltherausforderungen in innovative Lösungen umwandelt. Wir glauben an die Kraft der Jugend, um einen dauerhaften positiven Wandel für unseren Planeten zu bewirken.",
+    "btn1": "Treten Sie der Bewegung bei",
+    "btn2": "Erkunden Sie unsere Projekte",
+    "btn3": "Partnerschaftsmöglichkeiten"
+  },
+  "about": {
+    "title": "Wer Wir Sind",
+    "subtitle": "Führung der globalen Nachhaltigkeitsrevolution",
+    "desc1": "INNOVORA EcoHub Group steht an der Schnittstelle von Innovation und Umweltschutz. Wir sind eine Gemeinschaft von Veränderungsmachern, Umweltbegeisterten und Nachhaltigkeitsverfechtern, die zusammenarbeiten, um die drängendsten Herausforderungen unserer Zeit zu bewältigen.",
+    "quote": "Abfall ist nicht das Ende des Lebens eines Produkts – es ist der Anfang neuer Möglichkeiten.",
+    "desc2": "Unsere Mission ist es, nachhaltige Lösungen zu schaffen, die sowohl Menschen als auch dem Planeten zugute kommen. Durch Bildung, Innovation und Gemeinschaftsbeteiligung bauen wir eine Zukunft auf, in der Nachhaltigkeit nicht nur ein Ziel ist, sondern eine Lebensweise. Mit Operationen auf mehreren Kontinenten definiert INNOVORA neu, was es bedeutet, ein nachhaltiges Unternehmen zu sein."
+  },
+  "focus": {
+    "title": "Unsere Schwerpunktbereiche",
+    "card1": {
+      "title": "Abfall zu Reichtum",
+      "desc": "Umwandlung von landwirtschaftlichen und industriellen Abfällen in wertvolle Ressourcen und wirtschaftliche Chancen für Gemeinden."
+    },
+    "card2": {
+      "title": "Klimabewusstsein",
+      "desc": "Aufklärung und Mobilisierung von Gemeinden zum Verständnis des Klimawandels und zu bedeutsamen Maßnahmen zur Kohlenstoffneutralität."
+    },
+    "card3": {
+      "title": "Jugend Innovation",
+      "desc": "Stärkung junger Köpfe zur Entwicklung kreativer und nachhaltiger Lösungen für Umweltherausforderungen."
+    },
+    "card4": {
+      "title": "Gemeinschaftliche Auswirkungen",
+      "desc": "Aufbau starker lokaler Partnerschaften für nachhaltige Umwelt- und Sozialauswirkungen in unseren Gemeinden."
+    }
+  },
+  "projects": {
+    "title": "Ausgewähltes Projekt: Kakaoschalen-Nachhaltigkeit",
+    "projectTitle": "Von Abfall zu Wert",
+    "desc": "Unser Flaggschiff-Projekt konzentriert sich auf die Umwandlung von Kakaohülsen – landwirtschaftliche Abfälle, die normalerweise bei der Kakao verarbeitet werden – in nachhaltige, hochwertige Produkte.",
+    "benefit1": "Umweltauswirkungen: Reduziert landwirtschaftliche Abfälle und Entwaldungsdruck",
+    "benefit2": "Wirtschaftliche Chancen: Schafft Einnahmequellen für Landwirte und lokale Gemeinden",
+    "benefit3": "Innovation: Entwickelt neue nachhaltige Materialien und Produkte",
+    "benefit4": "Jugendbeteiligung: Bietet Schulung und Beschäftigung für junge Menschen",
+    "closing": "Durch Partnerschaften mit lokalen Bauern, Handwerkern und Unternehmen beweisen wir, dass Nachhaltigkeit und Rentabilität Hand in Hand gehen."
+  },
+  "join": {
+    "title": "Treten Sie der Bewegung bei",
+    "desc": "Seien Sie Teil einer Gemeinschaft, die echte Veränderungen bewirkt. Egal ob Innovatoren, Freiwillige, Partner oder Unterstützer – es gibt einen Platz für Sie in der INNOVORA-Familie.",
+    "btn1": "Werden Sie Freiwilliger",
+    "btn2": "Mit INNOVORA PARTNER"
+  },
+  "founder": {
+    "quote": "INNOVORA wurde aus einem einfachen Glauben gegründet: Junge Menschen können die Lösungen anführen, die unsere Umwelt braucht. Jede Aktion, egal wie klein, trägt zu einer größeren Bewegung hin zu einer nachhaltigen Zukunft bei.",
+    "name": "Godfred Arhin",
+    "title": "Gründer, INNOVORA EcoHub Group"
+  },
+  "footer": {
+    "tagline": "Innovation für Klima • Nachhaltigkeit • Umwelt",
+    "quickLinks": "Schnelle Links",
+    "followUs": "Folgen Sie uns",
+    "contact": "Kontakt",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "copyright": "© 2026 INNOVORA EcoHub Group. Alle Rechte vorbehalten. | Innovation für eine nachhaltige Zukunft.",
+    "home": "Startseite",
+    "aboutUs": "Über Uns",
+    "projects": "Projekte",
+    "contactUs": "Kontakt"
+  },
+  "language": "Sprache"
+}

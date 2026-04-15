@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOVORA ECOHUB GROUP - Innovating for Climate, Sustainability & Environment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="theme-color" content="#1e4226">
+    <meta name="description" content="INNOVORA EcoHub Group - Innovative sustainability solutions transforming waste into opportunities">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="assets/photo_2026-04-14_11-41-52.jpg" alt="INNOVORA Logo" class="navbar-logo">
+                <div class="brand-info">
+                    <span class="brand-text">INNOVORA</span>
+                    <span class="brand-subtext">EcoHub Group</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#focus" class="nav-link" data-i18n="nav.focus">Focus Areas</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button class="lang-toggle" id="langToggle" title="Switch Language">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-code" id="currentLang">EN</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-option" data-lang="en">🇬🇧 English</button>
+                    <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+                    <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+                    <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+                    <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+                    <button class="lang-option" data-lang="pt">🇵🇹 Português</button>
+                    <button class="lang-option" data-lang="ar">🇸🇦 العربية</button>
+                    <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo-section">
+                <img src="assets/photo_2026-04-14_11-41-55.jpg" alt="INNOVORA ECOHUB GROUP" class="hero-full-logo">
+            </div>
+            <h1 class="hero-title" data-i18n="hero.title">Turning Waste Into Opportunity</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Empowering Youth for a Sustainable Future</p>
+            <p class="hero-description" data-i18n="hero.description">INNOVORA EcoHub Group is a forward-thinking sustainability initiative dedicated to transforming environmental challenges into innovative solutions. We believe in the power of youth to create lasting positive change for our planet.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" data-i18n="hero.btn1">Join the Movement</button>
+                <button class="btn btn-secondary" data-i18n="hero.btn2">Explore Our Projects</button>
+                <button class="btn btn-tertiary" data-i18n="hero.btn3">Partnership Opportunities</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-header">
+                <h2 class="section-title" data-i18n="about.title">Who We Are</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">Leading the Global Sustainability Revolution</p>
+            </div>
+            <div class="about-content">
+                <p class="about-description" data-i18n="about.desc1">
+                    INNOVORA EcoHub Group stands at the intersection of innovation and environmental stewardship. We are a community of young changemakers, environmental enthusiasts, and sustainability champions working together to address the pressing challenges of our time.
+                </p>
+                <div class="about-quote">
+                    <p class="quote-text" data-i18n="about.quote">
+                        "Waste is not the end of a product's life—it is the beginning of new possibilities."
+                    </p>
+                </div>
+                <p class="about-description" data-i18n="about.desc2">
+                    Our mission is to create sustainable solutions that benefit both people and the planet. Through education, innovation, and community engagement, we are building a future where sustainability is not just a goal—it's a way of life. With operations spanning multiple continents, INNOVORA is redefining what it means to be a sustainable corporation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOCUS AREAS SECTION -->
+    <section id="focus" class="focus-areas">
+        <div class="container">
+            <h2 class="section-title" data-i18n="focus.title">Our Focus Areas</h2>
+            <div class="cards-grid">
+                <div class="focus-card">
+                    <div class="card-icon">♻️</div>
+                    <h3 class="card-title" data-i18n="focus.card1.title">Waste to Wealth</h3>
+                    <p class="card-description" data-i18n="focus.card1.desc">Transforming agricultural and industrial waste into valuable resources and economic opportunities for communities.</p>
+                </div>
+                <div class="focus-card">
+                    <div class="card-icon">🌍</div>
+                    <h3 class="card-title" data-i18n="focus.card2.title">Climate Awareness</h3>
+                    <p class="card-description" data-i18n="focus.card2.desc">Educating and mobilizing communities to understand climate change and take meaningful action toward carbon neutrality.</p>
+                </div>
+                <div class="focus-card">
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-title" data-i18n="focus.card3.title">Youth Innovation</h3>
+                    <p class="card-description" data-i18n="focus.card3.desc">Empowering young minds to develop creative and sustainable solutions to environmental challenges.</p>
+                </div>
+                <div class="focus-card">
+                    <div class="card-icon">🤝</div>
+                    <h3 class="card-title" data-i18n="focus.card4.title">Community Impact</h3>
+                    <p class="card-description" data-i18n="focus.card4.desc">Building strong local partnerships to create lasting environmental and social impact in our communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECT SECTION -->
+    <section id="projects" class="featured-project">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">Featured Project: Cocoa Husks Sustainability</h2>
+            <div class="project-content">
+                <div class="project-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #1e4226, #66cc33); min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: white;">
+                            <p style="font-size: 0.9rem; margin: 0;">🎬 Video Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-text">
+                    <h3 data-i18n="projects.projectTitle">From Waste to Value</h3>
+                    <p data-i18n="projects.desc">
+                        Our flagship project focuses on transforming cocoa husks—agricultural waste typically discarded during cocoa processing—into sustainable, high-value products. This initiative has multiple benefits:
+                    </p>
+                    <ul class="project-benefits">
+                        <li data-i18n="projects.benefit1"><strong>Environmental Impact:</strong> Reduces agricultural waste and deforestation pressure</li>
+                        <li data-i18n="projects.benefit2"><strong>Economic Opportunity:</strong> Creates income streams for farmers and local communities</li>
+                        <li data-i18n="projects.benefit3"><strong>Innovation:</strong> Develops new sustainable materials and products</li>
+                        <li data-i18n="projects.benefit4"><strong>Youth Engagement:</strong> Provides training and employment for young people</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN THE MOVEMENT SECTION -->
+    <section class="join-movement">
+        <div class="container">
+            <h2 class="section-title" data-i18n="join.title">Join the Movement</h2>
+            <p class="movement-description" data-i18n="join.desc">
+                Be part of a community that's making real change happen. Whether you're an innovator, volunteer, partner, or supporter, there's a place for you in the EcoHub family.
+            </p>
+            <div class="movement-buttons">
+                <button class="btn btn-primary-large" data-i18n="join.btn1">Become a Volunteer</button>
+                <button class="btn btn-secondary-large" data-i18n="join.btn2">Partner With EcoHub</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER MESSAGE SECTION -->
+    <section class="founder-message">
+        <div class="container">
+            <div class="founder-content">
+                <p class="founder-quote" data-i18n="founder.quote">
+                    "EcoHub started from a simple belief: young people can lead the solutions our environment needs. Every action, no matter how small, contributes to a larger movement toward a sustainable future."
+                </p>
+                <div class="founder-info">
+                    <h3 class="founder-name" data-i18n="founder.name">Godfred Arhin</h3>
+                    <p class="founder-title" data-i18n="founder.title">Founder, EcoHub Group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo-container">
+                        <div class="footer-logo">
+                            <h3>Innovora EcoHub</h3>
+                            <p>INNOVORA ECOHUB GROUP</p>
+                            <p class="footer-tagline">Innovating for Climate • Sustainability • Environment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-i18n="footer.home">Home</a></li>
+                        <li><a href="#about" data-i18n="footer.about">About Us</a></li>
+                        <li><a href="#projects" data-i18n="footer.projects">Projects</a></li>
+                        <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.follow">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">𝕏</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.contactTitle">Contact</h4>
+                    <p class="contact-info">📧 Email: <a href="mailto:ecohubgroup5@gmail.com" style="color: inherit; text-decoration: none;">ecohubgroup5@gmail.com</a></p>
+                    <p class="contact-info">📱 Phone: +233 (558) 212-837</p>
+                    <p class="contact-info"><button class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 0.5rem;" onclick="openModal('contactModal')">Send Message</button></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2026 Innovora EcoHub Group. All rights reserved. | Innovating for a sustainable future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS FOR BUTTONS -->
+    
+    <!-- Join Movement Modal -->
+    <div class="modal" id="joinModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Join the Movement</h2>
+                <button class="modal-close" onclick="closeModal('joinModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="joinForm">
+                    <div class="form-group">
+                        <label for="joinName">Full Name *</label>
+                        <input type="text" id="joinName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinEmail">Email Address *</label>
+                        <input type="email" id="joinEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinPhone">Phone Number</label>
+                        <input type="tel" id="joinPhone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="joinRole">How would you like to contribute? *</label>
+                        <select id="joinRole" name="role" required>
+                            <option value="">Select one...</option>
+                            <option value="volunteer">Volunteer</option>
+                            <option value="youth-leader">Youth Leader</option>
+                            <option value="ambassador">Environmental Ambassador</option>
+                            <option value="intern">Intern</option>
+                            <option value="staff">Staff Position</option>
+                            <option value="consultant">Consultant</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinEducation">Education/Background *</label>
+                        <input type="text" id="joinEducation" name="education" placeholder="e.g., B.S. Environmental Science" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinExperience">Years of Experience</label>
+                        <input type="number" id="joinExperience" name="experience" min="0" placeholder="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="joinCV">Upload CV/Resume * (PDF, DOC, DOCX)</label>
+                        <div class="file-upload">
+                            <input type="file" id="joinCV" name="cv" accept=".pdf,.doc,.docx" required>
+                            <span class="file-name">No file chosen</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinPortfolio">Portfolio Link (Optional)</label>
+                        <input type="url" id="joinPortfolio" name="portfolio" placeholder="https://yourportfolio.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Cover Letter / Personal Statement * (Choose one)</label>
+                        <div class="form-tabs">
+                            <button type="button" class="tab-btn active" data-tab="cover-type">📝 Type</button>
+                            <button type="button" class="tab-btn" data-tab="cover-upload">📄 Upload File</button>
+                        </div>
+                    </div>
+                    <div class="form-group tab-content active" id="cover-type">
+                        <textarea id="joinMessage" name="cover_letter_text" placeholder="Write your cover letter or personal statement..."></textarea>
+                    </div>
+                    <div class="form-group tab-content" id="cover-upload">
+                        <label for="joinCoverLetter">Upload Cover Letter (PDF, DOC, DOCX)</label>
+                        <div class="file-upload">
+                            <input type="file" id="joinCoverLetter" name="cover_letter_file" accept=".pdf,.doc,.docx">
+                            <span class="file-name">No file chosen</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="agree" required>
+                            I agree to be contacted about this opportunity
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('joinModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="submitForm('joinForm', 'joinModal')">Submit Application</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explore Projects Modal -->
+    <div class="modal" id="projectsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Explore Our Projects</h2>
+                <button class="modal-close" onclick="closeModal('projectsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>🌱 <strong>Cocoa Husks Sustainability Project</strong></p>
+                <p>Transform agricultural waste into valuable sustainable products. We're working with farmers across West Africa to create economic opportunities while protecting the environment.</p>
+                
+                <p style="margin-top: 1.5rem;">🌍 <strong>Climate Education Initiative</strong></p>
+                <p>Educating youth about climate change and empowering them to take action. Through workshops, seminars, and practical training, we're building the next generation of environmental leaders.</p>
+                
+                <p style="margin-top: 1.5rem;">💡 <strong>Green Innovation Lab</strong></p>
+                <p>A collaborative space where young innovators develop sustainable solutions to environmental challenges. From renewable energy to waste reduction, we incubate transformative ideas.</p>
+                
+                <p style="margin-top: 1.5rem;">🤝 <strong>Community Partnership Program</strong></p>
+                <p>Working with local communities to implement grassroots sustainability projects that create lasting impact while respecting cultural values and local knowledge.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal('projectsModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Contact Us</h2>
+                <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Name *</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email *</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject *</label>
+                        <input type="text" id="contactSubject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" name="message" placeholder="Your message here..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('contactModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="submitForm('contactForm', 'contactModal')">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partnership Modal -->
+    <div class="modal" id="partnerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Partnership Opportunities</h2>
+                <button class="modal-close" onclick="closeModal('partnerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="partnerForm">
+                    <div class="form-group">
+                        <label for="partnerCompany">Organization Name *</label>
+                        <input type="text" id="partnerCompany" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerContactName">Contact Person *</label>
+                        <input type="text" id="partnerContactName" name="contact_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerEmail">Email Address *</label>
+                        <input type="email" id="partnerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerType">Partnership Type *</label>
+                        <select id="partnerType" name="type" required>
+                            <option value="">Select one...</option>
+                            <option value="corporate">Corporate Partnership</option>
+                            <option value="ngo">NGO/Non-profit</option>
+                            <option value="government">Government Agency</option>
+                            <option value="educational">Educational Institution</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="partnerMessage">Partnership Proposal *</label>
+                        <textarea id="partnerMessage" name="message" placeholder="Describe your partnership idea..." required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('partnerModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="submitForm('partnerForm', 'partnerModal')">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/advanced-features.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

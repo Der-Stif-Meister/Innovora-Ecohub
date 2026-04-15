@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "focus": "Domaines de Focalisation",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Transformer les Déchets en Opportunités",
+    "subtitle": "Autonomiser la Jeunesse pour un Avenir Durable",
+    "description": "INNOVORA EcoHub Group est une initiative de développement durable avant-gardiste dédiée à la transformation des défis environnementaux en solutions innovantes. Nous croyons au pouvoir de la jeunesse pour créer un changement positif durable pour notre planète.",
+    "btn1": "Rejoindre le Mouvement",
+    "btn2": "Découvrez Nos Projets",
+    "btn3": "Opportunités de Partenariat"
+  },
+  "about": {
+    "title": "Qui Sommes-Nous",
+    "subtitle": "Mener la Révolution Mondiale de la Durabilité",
+    "desc1": "INNOVORA EcoHub Group se situe à l'intersection de l'innovation et de l'intendance environnementale. Nous sommes une communauté de acteurs du changement, d'enthousiastes de l'environnement et de champions de la durabilité travaillant ensemble pour relever les défis pressants de notre époque.",
+    "quote": "Les déchets ne sont pas la fin de la vie d'un produit, c'est le début de nouvelles possibilités.",
+    "desc2": "Notre mission est de créer des solutions durables qui bénéficient à la fois aux personnes et à la planète. Grâce à l'éducation, à l'innovation et à l'engagement communautaire, nous construisons un avenir où la durabilité n'est pas seulement un objectif, c'est une façon de vivre. Avec des opérations sur plusieurs continents, INNOVORA redéfinit ce que signifie être une société durable."
+  },
+  "focus": {
+    "title": "Nos Domaines de Focalisation",
+    "card1": {
+      "title": "Les Déchets en Richesse",
+      "desc": "Transformer les déchets agricoles et industriels en ressources précieuses et opportunités économiques pour les communautés."
+    },
+    "card2": {
+      "title": "Sensibilisation au Climat",
+      "desc": "Éduquer et mobiliser les communautés pour comprendre le changement climatique et prendre des mesures significatives vers la neutralité carbone."
+    },
+    "card3": {
+      "title": "Innovation Jeunesse",
+      "desc": "Autonomiser les jeunes esprits pour développer des solutions créatives et durables aux défis environnementaux."
+    },
+    "card4": {
+      "title": "Impact Communautaire",
+      "desc": "Construire des partenariats locaux solides pour créer un impact environnemental et social durable dans nos communautés."
+    }
+  },
+  "projects": {
+    "title": "Projet Vedette: Durabilité des Cosses de Cacao",
+    "projectTitle": "De la Déchetterie à la Valeur",
+    "desc": "Notre projet phare se concentre sur la transformation des cosses de cacao—déchets agricoles généralement jetés lors du traitement du cacao—en produits durables de haute valeur.",
+    "benefit1": "Impact Environnemental: Réduit les déchets agricoles et la pression de déforestation",
+    "benefit2": "Opportunité Économique: Crée des flux de revenus pour les agriculteurs et les communautés locales",
+    "benefit3": "Innovation: Développe de nouveaux matériaux et produits durables",
+    "benefit4": "Engagement des Jeunes: Fournit une formation et un emploi aux jeunes",
+    "closing": "Grâce à des partenariats avec des agriculteurs locaux, des artisans et des entreprises, nous prouvons que la durabilité et la rentabilité vont de pair."
+  },
+  "join": {
+    "title": "Rejoindre le Mouvement",
+    "desc": "Faites partie d'une communauté qui crée un véritable changement. Que vous soyez innovateur, bénévole, partenaire ou sympathisant, il y a une place pour vous dans la famille INNOVORA.",
+    "btn1": "Devenir Bénévole",
+    "btn2": "Partenaire avec INNOVORA"
+  },
+  "founder": {
+    "quote": "INNOVORA est né d'une simple conviction: les jeunes peuvent mener les solutions dont notre environnement a besoin. Chaque action, si petite soit-elle, contribue à un mouvement plus large vers un avenir durable.",
+    "name": "Godfred Arhin",
+    "title": "Fondateur, INNOVORA EcoHub Group"
+  },
+  "footer": {
+    "tagline": "Innover pour le Climat • Durabilité • Environnement",
+    "quickLinks": "Liens Rapides",
+    "followUs": "Suivez-Nous",
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Téléphone",
+    "copyright": "© 2026 INNOVORA EcoHub Group. Tous droits réservés. | Innover pour un avenir durable.",
+    "home": "Accueil",
+    "aboutUs": "À Propos de Nous",
+    "projects": "Projets",
+    "contactUs": "Contact"
+  },
+  "language": "Langue"
+}
