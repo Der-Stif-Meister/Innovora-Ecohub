@@ -122,3 +122,14 @@
 2026-04-16 00:36:26,926 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[33mGET /js/service-worker.js HTTP/1.1[0m" 404 -
 2026-04-16 00:36:26,926 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/ja.json HTTP/1.1" 200 -
 2026-04-16 00:38:07,599 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-16 00:38:07,780 - werkzeug - INFO -  * Restarting with stat
+2026-04-16 00:38:08,945 - werkzeug - WARNING -  * Debugger is active!
+2026-04-16 00:38:08,956 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-16 00:38:09,711 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-16 00:38:09,711 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:38:09,711 - werkzeug - INFO -  * Restarting with stat
+2026-04-16 00:38:10,612 - werkzeug - WARNING -  * Debugger is active!
+2026-04-16 00:38:10,612 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-16 00:38:28,557 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:38:28] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:38:36,445 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:38:36] "GET /admin/dashboard HTTP/1.1" 200 -
