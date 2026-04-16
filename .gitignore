@@ -1,0 +1,49 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Flask/Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+ecohub.log
+
+# Uploads
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Cache
+.cache/
+.pytest_cache/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
