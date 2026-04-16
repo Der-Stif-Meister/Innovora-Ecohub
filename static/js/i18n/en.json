@@ -72,5 +72,19 @@
     "follow": "Follow Us",
     "contactTitle": "Contact",
     "copyright": "© 2026 Innovora EcoHub Group. All rights reserved. | Innovating for a sustainable future."
+  },
+  "contact": {
+    "title": "📧 Get In Touch",
+    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "emailLabel": "📧 Email",
+    "phoneLabel": "📱 Phone",
+    "locationLabel": "🌍 Location",
+    "locationValue": "Global Operations",
+    "name": "Your Name *",
+    "emailField": "Your Email *",
+    "subject": "Subject *",
+    "message": "Message *",
+    "send": "Send Message"
+  },
   "language": "Language"
 }

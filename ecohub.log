@@ -1,0 +1,124 @@
+2026-04-16 00:06:05,500 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-16 00:06:05,501 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:07:23,014 - app - INFO - Admin user created: samuel
+2026-04-16 00:07:32,594 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:32] "[32mGET /admin/dashboard HTTP/1.1[0m" 302 -
+2026-04-16 00:07:32,694 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:32] "GET /admin/login?next=/admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:07:32,992 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-16 00:07:32,998 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-16 00:07:42,190 - __main__ - INFO - Admin samuel logged in successfully
+2026-04-16 00:07:42,191 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:42] "[32mPOST /admin/login?next=/admin/dashboard HTTP/1.1[0m" 302 -
+2026-04-16 00:07:42,242 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:42] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:07:42,380 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-16 00:07:42,388 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-16 00:07:47,795 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:47] "GET /admin/upload HTTP/1.1" 200 -
+2026-04-16 00:07:47,896 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-16 00:07:47,904 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-16 00:07:57,011 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:07:57] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:08:00,208 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:08:00] "GET /admin/files HTTP/1.1" 200 -
+2026-04-16 00:08:02,822 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:08:02] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:20:00,202 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:20:00] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:23:26,908 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:23:26] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-16 00:31:02,753 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-16 00:31:02,754 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:31:49,345 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-16 00:31:49,345 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:31:49,345 - werkzeug - INFO -  * Restarting with stat
+2026-04-16 00:31:50,155 - werkzeug - WARNING -  * Debugger is active!
+2026-04-16 00:31:50,159 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-16 00:32:34,425 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-16 00:32:34,427 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:32:34,428 - werkzeug - INFO -  * Restarting with stat
+2026-04-16 00:32:35,053 - werkzeug - WARNING -  * Debugger is active!
+2026-04-16 00:32:35,063 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-16 00:33:01,659 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:01] "GET / HTTP/1.1" 200 -
+2026-04-16 00:33:01,978 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:01] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-16 00:33:02,054 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "GET /static/js/i18n.js HTTP/1.1" 200 -
+2026-04-16 00:33:02,108 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "GET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1" 200 -
+2026-04-16 00:33:02,110 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "GET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1" 200 -
+2026-04-16 00:33:02,114 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "GET /static/js/advanced-features.js HTTP/1.1" 200 -
+2026-04-16 00:33:02,122 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "GET /static/js/script.js HTTP/1.1" 200 -
+2026-04-16 00:33:02,122 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "GET /static/manifest.json HTTP/1.1" 200 -
+2026-04-16 00:33:02,643 - app - WARNING - 404 error: /js/i18n/en.json
+2026-04-16 00:33:02,643 - app - WARNING - 404 error: /js/i18n/es.json
+2026-04-16 00:33:02,643 - app - WARNING - 404 error: /js/i18n/de.json
+2026-04-16 00:33:02,643 - app - WARNING - 404 error: /js/i18n/zh.json
+2026-04-16 00:33:02,643 - app - WARNING - 404 error: /js/i18n/fr.json
+2026-04-16 00:33:02,643 - app - WARNING - 404 error: /js/i18n/pt.json
+2026-04-16 00:33:02,643 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/en.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,643 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/pt.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,643 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/zh.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,643 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/es.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,658 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/de.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,667 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/fr.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,972 - app - WARNING - 404 error: /js/i18n/ar.json
+2026-04-16 00:33:02,972 - app - WARNING - 404 error: /js/i18n/ja.json
+2026-04-16 00:33:02,972 - app - WARNING - 404 error: /js/service-worker.js
+2026-04-16 00:33:02,972 - app - WARNING - 404 error: /favicon.ico
+2026-04-16 00:33:02,972 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/ar.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,972 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/i18n/ja.json HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,972 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /js/service-worker.js HTTP/1.1[0m" 404 -
+2026-04-16 00:33:02,972 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:33:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-16 00:33:57,910 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-16 00:33:57,910 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:33:57,911 - werkzeug - INFO -  * Restarting with stat
+2026-04-16 00:33:58,558 - werkzeug - WARNING -  * Debugger is active!
+2026-04-16 00:33:58,574 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-16 00:34:16,191 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET / HTTP/1.1" 200 -
+2026-04-16 00:34:16,645 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-16 00:34:16,649 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1" 200 -
+2026-04-16 00:34:16,651 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1" 200 -
+2026-04-16 00:34:16,657 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET /static/js/script.js HTTP/1.1" 200 -
+2026-04-16 00:34:16,664 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET /static/js/i18n.js HTTP/1.1" 200 -
+2026-04-16 00:34:16,674 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "GET /static/js/advanced-features.js HTTP/1.1" 200 -
+2026-04-16 00:34:16,760 - app - WARNING - 404 error: /js/service-worker.js
+2026-04-16 00:34:16,781 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/service-worker.js HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,837 - app - WARNING - 404 error: /js/i18n/en.json
+2026-04-16 00:34:16,845 - app - WARNING - 404 error: /js/i18n/fr.json
+2026-04-16 00:34:16,849 - app - WARNING - 404 error: /js/i18n/es.json
+2026-04-16 00:34:16,849 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/en.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,853 - app - WARNING - 404 error: /js/i18n/de.json
+2026-04-16 00:34:16,857 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/es.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,861 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/fr.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,865 - app - WARNING - 404 error: /js/i18n/pt.json
+2026-04-16 00:34:16,870 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/de.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,878 - app - WARNING - 404 error: /js/i18n/zh.json
+2026-04-16 00:34:16,882 - app - WARNING - 404 error: /js/i18n/ar.json
+2026-04-16 00:34:16,886 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/pt.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,898 - app - WARNING - 404 error: /js/i18n/ja.json
+2026-04-16 00:34:16,913 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/zh.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,919 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/ar.json HTTP/1.1[0m" 404 -
+2026-04-16 00:34:16,921 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:34:16] "[33mGET /js/i18n/ja.json HTTP/1.1[0m" 404 -
+2026-04-16 00:36:00,089 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-16 00:36:00,089 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-16 00:36:00,092 - werkzeug - INFO -  * Restarting with stat
+2026-04-16 00:36:01,077 - werkzeug - WARNING -  * Debugger is active!
+2026-04-16 00:36:01,123 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-16 00:36:25,751 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:25] "GET / HTTP/1.1" 200 -
+2026-04-16 00:36:25,997 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-16 00:36:26,078 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-16 00:36:26,079 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-16 00:36:26,083 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n.js HTTP/1.1" 200 -
+2026-04-16 00:36:26,105 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-16 00:36:26,106 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-16 00:36:26,113 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2026-04-16 00:36:26,559 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/en.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,613 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/es.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,613 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/zh.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,613 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/de.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,613 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/fr.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,613 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/pt.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,876 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/ar.json HTTP/1.1" 200 -
+2026-04-16 00:36:26,926 - app - WARNING - 404 error: /js/service-worker.js
+2026-04-16 00:36:26,926 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "[33mGET /js/service-worker.js HTTP/1.1[0m" 404 -
+2026-04-16 00:36:26,926 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:36:26] "GET /static/js/i18n/ja.json HTTP/1.1" 200 -
+2026-04-16 00:38:07,599 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading

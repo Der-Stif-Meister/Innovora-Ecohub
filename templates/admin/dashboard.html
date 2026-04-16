@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - INNOVORA EcoHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e4226 0%, #2d5d34 100%);
+            padding: 2rem 1rem;
+            overflow-y: auto;
+            color: white;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .sidebar nav a:hover,
+        .sidebar nav a.active {
+            background: rgba(102, 204, 51, 0.3);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #1e4226;
+        }
+
+        .header .user-info a {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #66cc33;
+        }
+
+        .stat-card h3 {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            color: #1e4226;
+            font-weight: bold;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #66cc33;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #4db81f;
+        }
+
+        .recent-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .recent-section h3 {
+            color: #1e4226;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #66cc33;
+            padding-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background: #f0f0f0;
+            padding: 0.75rem;
+            text-align: left;
+            color: #1e4226;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #999;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                padding: 1rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2>📊 Admin Panel</h2>
+        <nav>
+            <a href="/admin/dashboard" class="active">Dashboard</a>
+            <a href="/admin/upload">📤 Upload Files</a>
+            <a href="/admin/files">🖼️ View Files</a>
+            <a href="/admin/messages">💬 Messages</a>
+            <a href="/admin/logout">🚪 Logout</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>Dashboard</h1>
+                <p style="color: #666;">Welcome back, <strong>{{ current_user.username }}</strong>!</p>
+            </div>
+            <div class="user-info">
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3>📁 Total Uploaded Files</h3>
+                <div class="value">{{ total_files }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>💬 Total Contact Messages</h3>
+                <div class="value">{{ total_messages }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>👤 Admin User</h3>
+                <div class="value">{{ current_user.username }}</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="/admin/upload" class="btn">Upload New File</a>
+            <a href="/admin/files" class="btn">Manage Files</a>
+            <a href="/admin/messages" class="btn">View Messages</a>
+        </div>
+
+        <!-- Recent Messages -->
+        <div class="recent-section">
+            <h3>📨 Recent Contact Messages</h3>
+            {% if recent_messages %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for msg in recent_messages %}
+                            <tr>
+                                <td><strong>{{ msg.name }}</strong><br><small>{{ msg.email }}</small></td>
+                                <td>{{ msg.subject }}</td>
+                                <td>{{ msg.submitted_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="empty-message">No messages yet</div>
+            {% endif %}
+        </div>
+
+        <!-- Recent Files -->
+        <div class="recent-section">
+            <h3>🖼️ Recently Uploaded Files</h3>
+            {% if recent_files %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Filename</th>
+                            <th>Size</th>
+                            <th>Type</th>
+                            <th>Uploaded</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for file in recent_files %}
+                            <tr>
+                                <td><strong>{{ file.original_filename }}</strong></td>
+                                <td>{{ "%.2f"|format(file.file_size / 1024 / 1024) }} MB</td>
+                                <td><span style="background: #e0f7fa; padding: 0.25rem 0.75rem; border-radius: 3px;">{{ file.file_type }}</span></td>
+                                <td>{{ file.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="empty-message">No files uploaded yet</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

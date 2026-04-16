@@ -6,14 +6,13 @@
 const CACHE_NAME = 'innovora-ecohub-v1';
 const ASSETS_TO_CACHE = [
   '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/script.js',
-  '/js/i18n.js',
-  '/js/advanced-features.js',
-  '/js/analytics.js',
-  '/assets/photo_2026-04-14_11-41-52.jpg',
-  '/assets/photo_2026-04-14_11-41-55.jpg'
+  '/static/css/styles.css',
+  '/static/js/script.js',
+  '/static/js/i18n.js',
+  '/static/js/advanced-features.js',
+  '/static/js/analytics.js',
+  '/static/assets/photo_2026-04-14_11-41-52.jpg',
+  '/static/assets/photo_2026-04-14_11-41-55.jpg'
 ];
 
 // Install service worker and cache assets

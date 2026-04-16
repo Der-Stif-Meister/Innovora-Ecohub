@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Files - INNOVORA EcoHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #1e4226;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #66cc33;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: #4db81f;
+        }
+
+        .btn-danger {
+            background: #d32f2f;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-danger:hover {
+            background: #b71c1c;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .file-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .file-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .file-info {
+            padding: 1rem;
+        }
+
+        .file-info h3 {
+            color: #1e4226;
+            font-size: 0.95rem;
+            word-break: break-word;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-meta span {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .file-actions a {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            background: #e3f2fd;
+            color: #1565c0;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .file-actions a:hover {
+            background: #bbdefb;
+        }
+
+        .file-actions form {
+            flex: 1;
+        }
+
+        .file-actions button {
+            width: 100%;
+            padding: 0.5rem;
+            background: #ffebee;
+            color: #c62828;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .file-actions button:hover {
+            background: #ffcdd2;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 10px;
+            color: #999;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .pagination a,
+        .pagination .active {
+            padding: 0.5rem 0.75rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #1e4226;
+        }
+
+        .pagination a:hover {
+            background: #f0f0f0;
+        }
+
+        .pagination .active {
+            background: #66cc33;
+            color: white;
+        }
+
+        a.back-link {
+            color: #66cc33;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        a.back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/admin/dashboard" class="back-link">← Back to Dashboard</a>
+
+        <div class="header">
+            <div>
+                <h1>🖼️ Manage Files</h1>
+                <p style="color: #666;">View and manage all uploaded media files</p>
+            </div>
+            <a href="/admin/upload" class="btn">📤 Upload New</a>
+        </div>
+
+        {% if files.items %}
+            <div class="gallery">
+                {% for file in files.items %}
+                    <div class="file-card">
+                        <img src="{{ file.file_path }}" alt="{{ file.original_filename }}" class="file-image">
+                        <div class="file-info">
+                            <h3>{{ file.original_filename }}</h3>
+                            <div class="file-meta">
+                                <span>📦 Size: {{ "%.2f"|format(file.file_size / 1024 / 1024) }} MB</span>
+                                <span>📅 {{ file.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</span>
+                                <span>👤 {{ file.uploaded_by }}</span>
+                            </div>
+                            <div class="file-actions">
+                                <a href="{{ file.file_path }}" target="_blank">📂 View</a>
+                                <form method="POST" action="/admin/file/delete/{{ file.id }}" style="margin: 0;" onsubmit="return confirm('Delete this file?');">
+                                    <button type="submit" class="btn btn-danger">🗑️ Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if files.pages > 1 %}
+                <div class="pagination">
+                    {% for page_num in files.iter_pages() %}
+                        {% if page_num %}
+                            {% if page_num == files.page %}
+                                <span class="active">{{ page_num }}</span>
+                            {% else %}
+                                <a href="?page={{ page_num }}">{{ page_num }}</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="empty-message">
+                <h2>📭 No Files Uploaded Yet</h2>
+                <p>Start by uploading your first file.</p>
+                <a href="/admin/upload" class="btn" style="margin-top: 1rem; display: inline-block;">📤 Upload File</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

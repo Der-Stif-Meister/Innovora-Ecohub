@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INNOVORA ECOHUB GROUP - Innovating for Climate, Sustainability & Environment</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <meta name="theme-color" content="#1e4226">
     <meta name="description" content="INNOVORA EcoHub Group - Innovative sustainability solutions transforming waste into opportunities">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
@@ -17,7 +17,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-container">
-                <img src="assets/photo_2026-04-14_11-41-52.jpg" alt="INNOVORA Logo" class="navbar-logo">
+                <img src="{{ url_for('static', filename='assets/photo_2026-04-14_11-41-52.jpg') }}" alt="INNOVORA Logo" class="navbar-logo">
                 <div class="brand-info">
                     <span class="brand-text">INNOVORA</span>
                     <span class="brand-subtext">EcoHub Group</span>
@@ -62,7 +62,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-logo-section">
-                <img src="assets/photo_2026-04-14_11-41-55.jpg" alt="INNOVORA ECOHUB GROUP" class="hero-full-logo">
+                <img src="{{ url_for('static', filename='assets/photo_2026-04-14_11-41-55.jpg') }}" alt="INNOVORA ECOHUB GROUP" class="hero-full-logo">
             </div>
             <h1 class="hero-title" data-i18n="hero.title">Turning Waste Into Opportunity</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">Empowering Youth for a Sustainable Future</p>
@@ -180,6 +180,53 @@
                 <div class="founder-info">
                     <h3 class="founder-name" data-i18n="founder.name">Godfred Arhin</h3>
                     <p class="founder-title" data-i18n="founder.title">Founder, EcoHub Group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title" data-i18n="contact.title">📧 Get In Touch</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info-box">
+                    <div class="contact-item">
+                        <h3 data-i18n="contact.emailLabel">📧 Email</h3>
+                        <p><a href="mailto:ecohubgroup5@gmail.com">ecohubgroup5@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3 data-i18n="contact.phoneLabel">📱 Phone</h3>
+                        <p><a href="tel:+233558212837">+233 (558) 212-837</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3 data-i18n="contact.locationLabel">🌍 Location</h3>
+                        <p data-i18n="contact.locationValue">Global Operations</p>
+                    </div>
+                </div>
+                <div class="contact-form-box">
+                    <form method="POST" action="/contact" id="pageContactForm">
+                        <div class="form-group">
+                            <label for="pageContactName" data-i18n="contact.name">Your Name *</label>
+                            <input type="text" id="pageContactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pageContactEmail" data-i18n="contact.emailField">Your Email *</label>
+                            <input type="email" id="pageContactEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pageContactSubject" data-i18n="contact.subject">Subject *</label>
+                            <input type="text" id="pageContactSubject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pageContactMessage" data-i18n="contact.message">Message *</label>
+                            <textarea id="pageContactMessage" name="message" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.send">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -421,8 +468,8 @@
         </div>
     </div>
 
-    <script src="js/i18n.js"></script>
-    <script src="js/advanced-features.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/i18n.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/advanced-features.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

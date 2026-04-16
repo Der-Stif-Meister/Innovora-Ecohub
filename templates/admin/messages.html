@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages - INNOVORA EcoHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #1e4226;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table th {
+            background: #f0f0f0;
+            padding: 1rem;
+            text-align: left;
+            color: #1e4226;
+            font-weight: 600;
+            border-bottom: 2px solid #ddd;
+        }
+
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .message-row {
+            cursor: pointer;
+        }
+
+        .sender-info strong {
+            display: block;
+            color: #1e4226;
+        }
+
+        .sender-info small {
+            color: #999;
+        }
+
+        .subject {
+            font-weight: 600;
+            color: #1e4226;
+        }
+
+        .date {
+            color: #999;
+        }
+
+        .read-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #fff3cd;
+            color: #856404;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .read-badge.read {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 10px;
+            color: #999;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .pagination a,
+        .pagination .active {
+            padding: 0.5rem 0.75rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #1e4226;
+        }
+
+        .pagination a:hover {
+            background: #f0f0f0;
+        }
+
+        .pagination .active {
+            background: #66cc33;
+            color: white;
+        }
+
+        a.back-link {
+            color: #66cc33;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        a.back-link:hover {
+            text-decoration: underline;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            color: #1e4226;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .message-details {
+            margin-bottom: 1rem;
+        }
+
+        .message-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .message-details strong {
+            color: #1e4226;
+        }
+
+        .message-body {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/admin/dashboard" class="back-link">← Back to Dashboard</a>
+
+        <div class="header">
+            <h1>💬 Contact Messages</h1>
+            <p style="color: #666;">Review all messages submitted through the contact form</p>
+        </div>
+
+        {% if messages.items %}
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">From</th>
+                        <th style="width: 30%;">Subject</th>
+                        <th style="width: 15%;">Date</th>
+                        <th style="width: 15%;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for msg in messages.items %}
+                        <tr class="message-row" onclick="openMessage({{ msg.id }}, '{{ msg.name }}', '{{ msg.email }}', '{{ msg.subject }}', {{ msg.read }})">
+                            <td>
+                                <div class="sender-info">
+                                    <strong>{{ msg.name }}</strong>
+                                    <small>{{ msg.email }}</small>
+                                </div>
+                            </td>
+                            <td class="subject">{{ msg.subject }}</td>
+                            <td class="date">{{ msg.submitted_at.strftime('%Y-%m-%d') }}</td>
+                            <td>
+                                <span class="read-badge {% if msg.read %}read{% endif %}">
+                                    {% if msg.read %}✓ Read{% else %}📨 New{% endif %}
+                                </span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            {% if messages.pages > 1 %}
+                <div class="pagination">
+                    {% for page_num in messages.iter_pages() %}
+                        {% if page_num %}
+                            {% if page_num == messages.page %}
+                                <span class="active">{{ page_num }}</span>
+                            {% else %}
+                                <a href="?page={{ page_num }}">{{ page_num }}</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="empty-message">
+                <h2>📭 No Messages Yet</h2>
+                <p>Contact messages from visitors will appear here.</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Message Details</h2>
+                <button class="close-btn" onclick="closeMessage()">&times;</button>
+            </div>
+            <div class="message-details">
+                <p><strong>From:</strong> <span id="senderName"></span> (<span id="senderEmail"></span>)</p>
+                <p><strong>Subject:</strong> <span id="messageSubject"></span></p>
+            </div>
+            <p><strong>Message:</strong></p>
+            <div class="message-body" id="messageBody"></div>
+        </div>
+    </div>
+
+    <script>
+        function openMessage(id, name, email, subject, isRead) {
+            document.getElementById('senderName').textContent = name;
+            document.getElementById('senderEmail').textContent = email;
+            document.getElementById('messageSubject').textContent = subject;
+            document.getElementById('messageBody').textContent = 'Loading...';
+
+            document.getElementById('messageModal').classList.add('show');
+
+            // Mark as read
+            if (!isRead) {
+                fetch(`/admin/message/${id}/read`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            }
+        }
+
+        function closeMessage() {
+            document.getElementById('messageModal').classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('messageModal');
+            if (event.target == modal) {
+                modal.classList.remove('show');
+            }
+        }
+    </script>
+</body>
+</html>

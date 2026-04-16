@@ -19,7 +19,7 @@ class I18nManager {
             // Load all supported language translations
             for (const lang of this.supportedLanguages) {
                 try {
-                    const response = await fetch(`js/i18n/${lang}.json`);
+                    const response = await fetch(`/static/js/i18n/${lang}.json`);
                     if (response.ok) {
                         this.translations[lang] = await response.json();
                     }
@@ -59,7 +59,13 @@ class I18nManager {
      */
     t(key, defaultValue = key) {
         const keys = key.split('.');
-        let value = this.translations[this.currentLanguage] || {};
+        let value = this.translations[this.currentLanguage];
+        
+        // Fallback to English if current language not loaded
+        if (!value) {
+            console.warn(`Translations for ${this.currentLanguage} not loaded yet, trying English`);
+            value = this.translations['en'] || {};
+        }
         
         for (const k of keys) {
             value = value[k];
@@ -75,6 +81,12 @@ class I18nManager {
      * Translate all elements with data-i18n attribute
      */
     updatePageLanguage() {
+        // Only update if translations are loaded
+        if (!this.translations[this.currentLanguage]) {
+            console.warn(`Translations for ${this.currentLanguage} not loaded, skipping page update`);
+            return;
+        }
+        
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             const translation = this.t(key);
@@ -137,26 +149,48 @@ class I18nManager {
 // Create global instance
 const i18n = new I18nManager();
 
-// Initialize immediately with inline translation loading
-(async function() {
-    try {
-        // Load all supported language translations
-        for (const lang of i18n.supportedLanguages) {
-            try {
-                const response = await fetch(`js/i18n/${lang}.json`);
-                if (response.ok) {
-                    i18n.translations[lang] = await response.json();
+// Initialize with DOM ready check
+function initializeI18n() {
+    (async function() {
+        try {
+            console.log('Starting i18n initialization...');
+            // Load all supported language translations
+            const loadPromises = i18n.supportedLanguages.map(async (lang) => {
+                try {
+                    const response = await fetch(`/static/js/i18n/${lang}.json`);
+                    if (response.ok) {
+                        i18n.translations[lang] = await response.json();
+                        console.log(`✓ Loaded ${lang} translations`);
+                        return true;
+                    } else {
+                        console.error(`Failed to load ${lang}: ${response.status}`);
+                        return false;
+                    }
+                } catch (error) {
+                    console.error(`Failed to load language: ${lang}`, error);
+                    return false;
                 }
-            } catch (error) {
-                console.warn(`Failed to load language: ${lang}`, error);
-            }
+            });
+            
+            // Wait for all languages to load
+            await Promise.all(loadPromises);
+            
+            i18n.initialized = true;
+            console.log('All translations loaded, current language:', i18n.currentLanguage);
+            console.log('Translations object keys:', Object.keys(i18n.translations));
+            
+            // Update page language ONLY after all translations are loaded
+            i18n.updatePageLanguage();
+            console.log('✓ I18n initialized successfully and page updated');
+        } catch (error) {
+            console.error('Failed to initialize i18n:', error);
         }
-        i18n.initialized = true;
-        
-        // Update page language immediately after translations load
-        i18n.updatePageLanguage();
-        console.log('✓ I18n initialized successfully with language:', i18n.currentLanguage);
-    } catch (error) {
-        console.error('Failed to initialize i18n:', error);
-    }
-})();
+    })();
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeI18n);
+} else {
+    initializeI18n();
+}
