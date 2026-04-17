@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members - INNOVORA EcoHub Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            color: #1e4226;
+            margin: 0;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e4226, #66cc33);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #66cc33, #8bb336);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-placeholder {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e4226;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: #66cc33;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-actions {
+            text-align: right;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 10px;
+            color: #666;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .page-info {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Team Members</h1>
+            <a href="{{ url_for('admin_team_add') }}" class="btn btn-primary">+ Add Team Member</a>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if team_members.items %}
+            <div class="team-grid">
+                {% for member in team_members.items %}
+                    <div class="team-card">
+                        <div class="team-image">
+                            {% if member.image_filename %}
+                                <img src="{{ url_for('static', filename='uploads/' ~ member.image_filename) }}" 
+                                     alt="{{ member.name }}">
+                            {% else %}
+                                <div class="team-placeholder">👤</div>
+                            {% endif %}
+                        </div>
+                        <div class="team-info">
+                            <div class="team-name">{{ member.name }}</div>
+                            <div class="team-role">{{ member.role }}</div>
+                            <div class="team-date">Added: {{ member.created_at.strftime('%Y-%m-%d') }}</div>
+                            <div class="team-actions">
+                                <form action="{{ url_for('delete_team_member', team_id=member.id) }}" method="POST" style="display:inline;">
+                                    <button type="submit" class="btn btn-danger" 
+                                            onclick="return confirm('Delete this team member?')">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if team_members.has_prev or team_members.has_next %}
+                <div class="pagination">
+                    {% if team_members.has_prev %}
+                        <a href="{{ url_for('admin_team', page=team_members.prev_num) }}" class="btn btn-primary">← Previous</a>
+                    {% endif %}
+
+                    <span class="page-info">
+                        Page {{ team_members.page }} of {{ team_members.pages }}
+                    </span>
+
+                    {% if team_members.has_next %}
+                        <a href="{{ url_for('admin_team', page=team_members.next_num) }}" class="btn btn-primary">Next →</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="empty-state">
+                <p>No team members yet. <a href="{{ url_for('admin_team_add') }}">Add the first one</a></p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

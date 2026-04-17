@@ -13,6 +13,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
+    <!-- Alert Banner -->
+    {% if active_alert %}
+    <div class="alert-banner" id="alert-banner">
+        <div class="alert-content">
+            <div class="alert-title">{{ active_alert.title }}</div>
+            <div class="alert-message">{{ active_alert.message }}</div>
+        </div>
+        <button class="alert-close" onclick="closeAlert()">×</button>
+    </div>
+    {% endif %}
+
     <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <div class="nav-container">
@@ -28,6 +39,7 @@
                 <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
                 <li><a href="#focus" class="nav-link" data-i18n="nav.focus">Focus Areas</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="{{ url_for('team') }}" class="nav-link" data-i18n="nav.team">Team</a></li>
                 <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
             
@@ -471,5 +483,15 @@
     <script src="{{ url_for('static', filename='js/i18n.js') }}"></script>
     <script src="{{ url_for('static', filename='js/advanced-features.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    <script>
+        // Close alert banner
+        function closeAlert() {
+            const alertBanner = document.getElementById('alert-banner');
+            if (alertBanner) {
+                alertBanner.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

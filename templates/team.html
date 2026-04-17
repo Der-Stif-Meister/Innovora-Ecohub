@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav.team">Team | INNOVORA EcoHub Group</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#1e4226">
+</head>
+<body>
+    <!-- Alert Banner -->
+    {% if active_alert %}
+    <div class="alert-banner" id="alert-banner">
+        <div class="alert-content">
+            <div class="alert-title">{{ active_alert.title }}</div>
+            <div class="alert-message">{{ active_alert.message }}</div>
+        </div>
+        <button class="alert-close" onclick="closeAlert()">×</button>
+    </div>
+    {% endif %}
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo-container">
+                <img src="{{ url_for('static', filename='assets/logo_small.png') }}" alt="Logo" class="navbar-logo">
+                <span class="brand-text" data-i18n="brand.name">INNOVORA ECOHUB</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="{{ url_for('index') }}#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="{{ url_for('index') }}#focus" class="nav-link" data-i18n="nav.focus">Focus Areas</a></li>
+                <li><a href="{{ url_for('index') }}#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="{{ url_for('team') }}" class="nav-link" data-i18n="nav.team">Team</a></li>
+                <li><a href="{{ url_for('index') }}#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+
+            <div class="language-switcher">
+                <button class="lang-toggle" onclick="toggleLangDropdown()">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-code" id="lang-code">EN</span>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <button type="button" class="lang-option" onclick="switchLanguage('en')">English</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('es')">Español</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('fr')">Français</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('de')">Deutsch</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('zh')">中文</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('pt')">Português</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('ar')">العربية</button>
+                    <button type="button" class="lang-option" onclick="switchLanguage('ja')">日本語</button>
+                </div>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h1 class="section-title" data-i18n="team.title">Our Team</h1>
+            <p class="section-subtitle" data-i18n="team.subtitle">Meet the brilliant minds driving innovation in sustainable technology</p>
+
+            {% if team_members %}
+                <div class="team-grid">
+                    {% for member in team_members %}
+                        <div class="team-card">
+                            <div class="team-image">
+                                {% if member.image_filename %}
+                                    <img src="{{ url_for('static', filename='uploads/' ~ member.image_filename) }}" 
+                                         alt="{{ member.name }}">
+                                {% else %}
+                                    <div class="team-no-image">👤</div>
+                                {% endif %}
+                            </div>
+                            <div class="team-card-content">
+                                <div class="team-member-name">{{ member.name }}</div>
+                                <div class="team-member-role">{{ member.role }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div style="text-align: center; padding: 3rem; color: #999;">
+                    <p>Team members coming soon!</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <div class="footer-logo">
+                        <h3>INNOVORA</h3>
+                        <p>EcoHub Group</p>
+                        <span class="footer-tagline" data-i18n="footer.tagline">Innovating for a sustainable future</span>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('index') }}#home" data-i18n="nav.home">Home</a></li>
+                        <li><a href="{{ url_for('index') }}#about" data-i18n="nav.about">About</a></li>
+                        <li><a href="{{ url_for('index') }}#focus" data-i18n="nav.focus">Focus</a></li>
+                        <li><a href="{{ url_for('index') }}#contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-i18n="footer.social">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">𝕏</a>
+                        <a href="#" class="social-icon">in</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 INNOVORA EcoHub Group. <span data-i18n="footer.allRights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- i18n Module -->
+    <script src="{{ url_for('static', filename='js/i18n.js') }}"></script>
+    <!-- Main Script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <script>
+        // Close alert
+        function closeAlert() {
+            document.getElementById('alert-banner').style.display = 'none';
+        }
+
+        // Language dropdown
+        function toggleLangDropdown() {
+            document.getElementById('lang-dropdown').classList.toggle('active');
+        }
+
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.language-switcher')) {
+                document.getElementById('lang-dropdown').classList.remove('active');
+            }
+        });
+
+        // Mobile menu
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+
+        // Switch language
+        function switchLanguage(lang) {
+            i18n.setLanguage(lang);
+            document.getElementById('lang-code').textContent = lang.toUpperCase();
+            document.getElementById('lang-dropdown').classList.remove('active');
+        }
+
+        // Initialize i18n
+        i18n.init();
+    </script>
+</body>
+</html>

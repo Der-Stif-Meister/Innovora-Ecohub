@@ -133,3 +133,84 @@
 2026-04-16 00:38:10,612 - werkzeug - INFO -  * Debugger PIN: 784-020-871
 2026-04-16 00:38:28,557 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:38:28] "GET /admin/dashboard HTTP/1.1" 200 -
 2026-04-16 00:38:36,445 - werkzeug - INFO - 127.0.0.1 - - [16/Apr/2026 00:38:36] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-04-17 11:12:00,006 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+2026-04-17 11:12:00,009 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 11:17:40,159 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:40] "GET / HTTP/1.1" 200 -
+2026-04-17 11:17:41,318 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,323 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,338 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n.js HTTP/1.1" 200 -
+2026-04-17 11:17:41,350 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,362 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,362 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/advanced-features.js HTTP/1.1" 200 -
+2026-04-17 11:17:41,491 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 11:17:41,748 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET / HTTP/1.1" 200 -
+2026-04-17 11:17:41,749 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,760 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/es.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,781 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/en.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,787 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/de.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,808 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/fr.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,821 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/zh.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,822 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/pt.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,837 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/ar.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,855 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,856 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "GET /static/js/i18n/ja.json HTTP/1.1" 200 -
+2026-04-17 11:17:41,865 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,892 - app - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 11:17:41,893 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,909 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,925 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:17:41,929 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:41] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 11:17:42,155 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 11:17:42,160 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:42] "GET / HTTP/1.1" 200 -
+2026-04-17 11:17:42,163 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:42] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:42,182 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:42] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:42,198 - app - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 11:17:42,199 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:42] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 11:17:42,212 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:17:42] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 11:37:33,610 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "GET / HTTP/1.1" 200 -
+2026-04-17 11:37:33,689 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,689 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,707 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,707 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-17 11:37:33,726 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,737 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,753 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 11:37:33,911 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,911 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,911 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,911 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,936 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,972 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,972 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:33,988 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:33] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,010 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "GET / HTTP/1.1" 200 -
+2026-04-17 11:37:34,028 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,036 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,050 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,067 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,081 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,095 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,105 - app - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 11:37:34,120 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 11:37:34,301 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "GET / HTTP/1.1" 200 -
+2026-04-17 11:37:34,306 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,314 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,317 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 11:37:34,348 - app - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 11:37:34,359 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 11:37:34,360 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 11:37:34] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 15:30:25,185 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-17 15:30:25,885 - werkzeug - INFO -  * Restarting with stat
+2026-04-17 15:30:27,362 - werkzeug - WARNING -  * Debugger is active!
+2026-04-17 15:30:27,369 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-17 15:30:30,411 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-17 15:30:30,569 - werkzeug - INFO -  * Restarting with stat
+2026-04-17 15:30:31,510 - werkzeug - WARNING -  * Debugger is active!
+2026-04-17 15:30:31,512 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-17 15:30:58,630 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-17 15:30:58,786 - werkzeug - INFO -  * Restarting with stat
+2026-04-17 15:30:59,924 - werkzeug - WARNING -  * Debugger is active!
+2026-04-17 15:30:59,936 - werkzeug - INFO -  * Debugger PIN: 784-020-871

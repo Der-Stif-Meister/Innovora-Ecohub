@@ -142,6 +142,30 @@ class ContactMessage(db.Model):
         return f'<ContactMessage {self.email}>'
 
 
+class TeamMember(db.Model):
+    """Team member profiles"""
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), nullable=False)
+    role = db.Column(db.String(120), nullable=False)
+    image_filename = db.Column(db.String(255))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
+
+    def __repr__(self):
+        return f'<TeamMember {self.name}>'
+
+
+class Alert(db.Model):
+    """Daily alerts displayed on homepage"""
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    message = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
+    is_active = db.Column(db.Boolean, default=True)
+
+    def __repr__(self):
+        return f'<Alert {self.title}>'
+
+
 # ============================================
 # LOGIN MANAGER
 # ============================================
@@ -399,13 +423,201 @@ def mark_message_read(message_id):
 
 
 # ============================================
+# TEAM MANAGEMENT ROUTES
+# ============================================
+
+@app.route('/admin/team')
+@login_required
+def admin_team():
+    """View all team members"""
+    page = request.args.get('page', 1, type=int)
+    team_members = TeamMember.query.order_by(TeamMember.created_at.desc()).paginate(page=page, per_page=12)
+    return render_template('admin/team.html', team_members=team_members)
+
+
+@app.route('/admin/team/add', methods=['GET', 'POST'])
+@login_required
+def admin_team_add():
+    """Add new team member"""
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name', '').strip()
+            role = request.form.get('role', '').strip()
+            
+            # Validation
+            if not name or not role:
+                flash('Name and role are required.', 'error')
+                return redirect(url_for('admin_team_add'))
+
+            # Handle image upload
+            image_filename = None
+            if 'image' in request.files:
+                file = request.files['image']
+                if file and file.filename and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
+                    image_filename = timestamp + 'team_' + filename
+                    file_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+                    file.save(file_path)
+                    logger.info(f'Team image uploaded: {image_filename}')
+
+            # Create team member
+            team_member = TeamMember(
+                name=name,
+                role=role,
+                image_filename=image_filename
+            )
+            db.session.add(team_member)
+            db.session.commit()
+
+            logger.info(f'Team member added: {name} ({role})')
+            flash(f'Team member "{name}" added successfully!', 'success')
+            return redirect(url_for('admin_team'))
+
+        except Exception as e:
+            logger.error(f'Error adding team member: {str(e)}')
+            flash('An error occurred while adding team member.', 'error')
+            return redirect(url_for('admin_team_add'))
+
+    return render_template('admin/team_add.html')
+
+
+@app.route('/admin/team/<int:team_id>/delete', methods=['POST'])
+@login_required
+def delete_team_member(team_id):
+    """Delete team member"""
+    team_member = TeamMember.query.get_or_404(team_id)
+    
+    try:
+        # Delete image file if exists
+        if team_member.image_filename:
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], team_member.image_filename)
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+        db.session.delete(team_member)
+        db.session.commit()
+
+        logger.info(f'Team member deleted: {team_member.name}')
+        flash(f'Team member "{team_member.name}" deleted successfully.', 'success')
+
+    except Exception as e:
+        logger.error(f'Error deleting team member: {str(e)}')
+        flash('An error occurred while deleting team member.', 'error')
+
+    return redirect(url_for('admin_team'))
+
+
+# ============================================
+# ALERT MANAGEMENT ROUTES
+# ============================================
+
+@app.route('/admin/alerts')
+@login_required
+def admin_alerts():
+    """View all alerts"""
+    page = request.args.get('page', 1, type=int)
+    alerts = Alert.query.order_by(Alert.created_at.desc()).paginate(page=page, per_page=10)
+    return render_template('admin/alerts.html', alerts=alerts)
+
+
+@app.route('/admin/alerts/add', methods=['GET', 'POST'])
+@login_required
+def admin_alerts_add():
+    """Add new alert"""
+    if request.method == 'POST':
+        try:
+            title = request.form.get('title', '').strip()
+            message = request.form.get('message', '').strip()
+
+            # Validation
+            if not title or not message:
+                flash('Title and message are required.', 'error')
+                return redirect(url_for('admin_alerts_add'))
+
+            # Create alert (automatically set as active)
+            alert = Alert(
+                title=title,
+                message=message,
+                is_active=True
+            )
+            db.session.add(alert)
+            db.session.commit()
+
+            logger.info(f'Alert created: {title}')
+            flash(f'Alert "{title}" created successfully!', 'success')
+            return redirect(url_for('admin_alerts'))
+
+        except Exception as e:
+            logger.error(f'Error creating alert: {str(e)}')
+            flash('An error occurred while creating alert.', 'error')
+            return redirect(url_for('admin_alerts_add'))
+
+    return render_template('admin/alerts_add.html')
+
+
+@app.route('/admin/alerts/<int:alert_id>/toggle', methods=['POST'])
+@login_required
+def toggle_alert(alert_id):
+    """Toggle alert active status"""
+    alert = Alert.query.get_or_404(alert_id)
+    
+    try:
+        alert.is_active = not alert.is_active
+        db.session.commit()
+        
+        status = 'activated' if alert.is_active else 'deactivated'
+        logger.info(f'Alert {status}: {alert.title}')
+        flash(f'Alert {status} successfully.', 'success')
+
+    except Exception as e:
+        logger.error(f'Error toggling alert: {str(e)}')
+        flash('An error occurred while toggling alert.', 'error')
+
+    return redirect(url_for('admin_alerts'))
+
+
+@app.route('/admin/alerts/<int:alert_id>/delete', methods=['POST'])
+@login_required
+def delete_alert(alert_id):
+    """Delete alert"""
+    alert = Alert.query.get_or_404(alert_id)
+    
+    try:
+        db.session.delete(alert)
+        db.session.commit()
+
+        logger.info(f'Alert deleted: {alert.title}')
+        flash('Alert deleted successfully.', 'success')
+
+    except Exception as e:
+        logger.error(f'Error deleting alert: {str(e)}')
+        flash('An error occurred while deleting alert.', 'error')
+
+    return redirect(url_for('admin_alerts'))
+
+
+# ============================================
+# PUBLIC TEAM PAGE
+# ============================================
+
+@app.route('/team')
+def team():
+    """Display team members"""
+    team_members = TeamMember.query.order_by(TeamMember.created_at.asc()).all()
+    active_alert = Alert.query.filter_by(is_active=True).order_by(Alert.created_at.desc()).first()
+    return render_template('team.html', team_members=team_members, active_alert=active_alert)
+
+
+# ============================================
 # PUBLIC ROUTES
 # ============================================
 
 @app.route('/')
 def index():
-    """Homepage"""
-    return render_template('index.html')
+    """Homepage - pass active alert"""
+    active_alert = Alert.query.filter_by(is_active=True).order_by(Alert.created_at.desc()).first()
+    return render_template('index.html', active_alert=active_alert)
 
 
 @app.route('/contact', methods=['POST'])

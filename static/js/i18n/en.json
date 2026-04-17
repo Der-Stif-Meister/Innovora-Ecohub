@@ -4,6 +4,7 @@
     "about": "About",
     "focus": "Focus Areas",
     "projects": "Projects",
+    "team": "Team",
     "contact": "Contact"
   },
   "hero": {
@@ -85,6 +86,19 @@
     "subject": "Subject *",
     "message": "Message *",
     "send": "Send Message"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the brilliant minds driving innovation in sustainable technology"
+  },
+  "admin": {
+    "teamManagement": "Team Members"
+  },
+  "footer": {
+    "tagline": "Innovating for Climate • Sustainability • Environment",
+    "quickLinks": "Quick Links",
+    "social": "Follow Us",
+    "allRights": "All rights reserved."
   },
   "language": "Language"
 }
