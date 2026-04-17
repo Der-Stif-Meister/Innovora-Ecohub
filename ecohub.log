@@ -560,3 +560,441 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'projec
 2026-04-17 17:49:27,839 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
 2026-04-17 17:49:28,028 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:28] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
 2026-04-17 17:49:28,162 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:28] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:36,909 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:36] "[32mGET /admin/dashboard HTTP/1.1[0m" 302 -
+2026-04-17 17:52:37,057 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:37] "GET /admin/login?next=/admin/dashboard HTTP/1.1" 200 -
+2026-04-17 17:52:37,439 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-17 17:52:37,450 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 17:52:41,842 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:41] "GET / HTTP/1.1" 200 -
+2026-04-17 17:52:42,108 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:42,115 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:42,119 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:42,134 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-17 17:52:42,763 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 17:52:42,775 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:52:42,787 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:52:42,823 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "GET /static/assets/cocoa%20project%203.jpeg HTTP/1.1" 200 -
+2026-04-17 17:52:42,832 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "GET /static/assets/cocoa%20project%202.jpeg HTTP/1.1" 200 -
+2026-04-17 17:52:42,837 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:42] "GET /static/assets/cocoa%20project.jpeg HTTP/1.1" 200 -
+2026-04-17 17:52:43,339 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 17:52:43,580 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,586 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,583 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "GET / HTTP/1.1" 200 -
+2026-04-17 17:52:43,618 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,624 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,635 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,640 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,649 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:52:43,658 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:52:43,719 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,722 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "GET / HTTP/1.1" 200 -
+2026-04-17 17:52:43,738 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,743 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,748 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:52:43,759 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:52:43,769 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,790 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,813 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,824 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,826 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,849 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,850 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,915 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:43,919 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:43] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:52:47,986 - __main__ - WARNING - Failed login attempt for username: samuel from 127.0.0.1
+2026-04-17 17:52:47,987 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:47] "POST /admin/login?next=/admin/dashboard HTTP/1.1" 200 -
+2026-04-17 17:52:48,361 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-17 17:52:48,366 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:52:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 17:53:30,679 - __main__ - WARNING - Failed login attempt for username: samuel from 127.0.0.1
+2026-04-17 17:53:30,680 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:30] "POST /admin/login?next=/admin/dashboard HTTP/1.1" 200 -
+2026-04-17 17:53:30,955 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-17 17:53:30,956 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-17 17:53:33,094 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "GET / HTTP/1.1" 200 -
+2026-04-17 17:53:33,185 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,190 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,194 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,210 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,243 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,251 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,253 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,261 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,267 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,360 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 17:53:33,479 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 17:53:33,687 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,702 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,718 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,740 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,747 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,753 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,768 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,771 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,833 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "GET / HTTP/1.1" 200 -
+2026-04-17 17:53:33,841 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,873 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,879 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,942 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:53:33,953 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,956 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:53:33,974 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:33,988 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:33] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:34,257 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:34] "GET / HTTP/1.1" 200 -
+2026-04-17 17:53:34,258 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:34] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:34,270 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:34] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:34,271 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:53:34,285 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:53:34,286 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:34] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:34,290 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:34] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:53:38,065 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "GET /project/cocoa-husks HTTP/1.1" 200 -
+2026-04-17 17:53:38,155 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,157 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,161 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,557 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 17:53:38,560 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 17:53:38,566 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,567 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,570 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,704 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,704 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,715 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,725 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,737 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,743 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,777 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:38,788 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:38] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:53:49,283 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:53:49] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 17:54:03,474 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "GET / HTTP/1.1" 200 -
+2026-04-17 17:54:03,590 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,592 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,608 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,625 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,669 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,682 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,690 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,694 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,713 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,804 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 17:54:03,846 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,854 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,861 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,875 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,884 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,903 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,910 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,913 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,944 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,945 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "GET / HTTP/1.1" 200 -
+2026-04-17 17:54:03,963 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,970 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:03,977 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:54:03,991 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:03] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:54:04,014 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:04,016 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:04,024 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:04,081 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "GET / HTTP/1.1" 200 -
+2026-04-17 17:54:04,085 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:04,093 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:54:04,093 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:54:04,109 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:54:04,114 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:04,119 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:04] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:59,154 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "GET / HTTP/1.1" 200 -
+2026-04-17 17:54:59,405 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:54:59,708 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:59,710 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:54:59,713 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "GET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1" 200 -
+2026-04-17 17:54:59,889 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:59,894 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:54:59,897 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:54:59] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,043 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,103 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,878 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,893 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,924 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,961 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:00,963 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:00] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:01,203 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:01,203 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:01,218 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 17:55:01,243 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "[36mGET /static/js/service-worker.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:01,675 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:01,698 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:55:01,707 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:01] "GET / HTTP/1.1" 200 -
+2026-04-17 17:55:02,019 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:02,028 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:55:02,029 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:02,031 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:55:02,353 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "GET / HTTP/1.1" 200 -
+2026-04-17 17:55:02,365 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:02,373 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:55:02,384 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:02,398 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:02,711 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 17:55:02,713 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:02] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 17:55:03,894 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:03] "GET /project/cocoa-husks HTTP/1.1" 200 -
+2026-04-17 17:55:04,104 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,275 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 17:55:04,278 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 17:55:04,281 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,282 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,313 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,319 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,419 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,748 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,748 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,751 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,761 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,764 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:04,766 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:04] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:05,062 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:05] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:55:05,064 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:55:05] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,620 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "GET /project/cocoa-husks HTTP/1.1" 200 -
+2026-04-17 18:52:33,784 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,786 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,787 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,805 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 18:52:33,807 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 18:52:33,832 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,833 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,835 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:33,960 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:33] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 18:52:34,299 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,303 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,316 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,349 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,357 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,367 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,410 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:34,412 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:34] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,279 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "GET / HTTP/1.1" 200 -
+2026-04-17 18:52:46,373 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,379 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,381 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,397 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,456 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,462 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,476 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,480 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,482 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:46,649 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:46] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 18:52:47,013 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,027 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,045 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,063 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,076 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,082 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,096 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,114 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,129 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "GET / HTTP/1.1" 200 -
+2026-04-17 18:52:47,156 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,163 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,171 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,172 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,219 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,225 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 18:52:47,227 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,236 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 18:52:47,315 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,321 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "GET / HTTP/1.1" 200 -
+2026-04-17 18:52:47,324 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,344 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,349 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:52:47,350 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 18:52:47,375 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:47] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 18:52:50,799 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:50] "GET /team HTTP/1.1" 200 -
+2026-04-17 18:52:50,977 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:52:50,981 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:50] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,013 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,047 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,095 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,189 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,200 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,207 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,214 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,215 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,223 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,231 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,240 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,241 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,271 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,309 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,325 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,339 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,356 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:52:51,373 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:52:51] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,693 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "GET / HTTP/1.1" 200 -
+2026-04-17 18:53:00,934 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,942 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,947 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,949 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,991 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,996 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:00,997 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:00] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,005 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,007 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,045 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 18:53:01,113 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,129 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,148 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,154 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,162 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,176 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,184 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,201 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,715 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "GET / HTTP/1.1" 200 -
+2026-04-17 18:53:01,720 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,729 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,874 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 18:53:01,891 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 18:53:01,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,912 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,927 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,942 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,980 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "GET / HTTP/1.1" 200 -
+2026-04-17 18:53:01,981 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,991 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:01,994 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:01] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:02,004 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 18:53:02,013 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:02] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 18:53:02,014 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:02] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,549 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "GET /project/cocoa-husks HTTP/1.1" 200 -
+2026-04-17 18:53:09,632 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,644 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,647 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,724 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,729 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,753 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 18:53:09,764 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 18:53:09,766 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,906 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,914 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,923 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,930 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,933 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,949 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,955 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:09,956 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:09] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,539 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "GET / HTTP/1.1" 200 -
+2026-04-17 18:53:50,661 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,673 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,677 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,682 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,887 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,895 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,903 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,909 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,913 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:50,987 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:50] "GET /static/js/service-worker.js HTTP/1.1" 200 -
+2026-04-17 18:53:51,046 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,071 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,077 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,101 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,128 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,174 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,181 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,205 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,417 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,456 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,494 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "GET / HTTP/1.1" 200 -
+2026-04-17 18:53:51,524 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,549 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 18:53:51,564 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 18:53:51,573 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,595 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,601 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,679 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "GET / HTTP/1.1" 200 -
+2026-04-17 18:53:51,681 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,691 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,697 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 18:53:51,705 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 18:53:51,709 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 18:53:51,717 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 18:53:51] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 19:03:31,557 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 19:03:31,559 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 19:03:59,471 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:03:59] "GET /project/cocoa-husks HTTP/1.1" 200 -
+2026-04-17 19:03:59,651 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:03:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 19:03:59,955 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 19:03:59,956 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:03:59] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 19:03:59,956 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:03:59] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,040 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,040 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,041 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,042 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,283 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,377 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,379 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,384 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,386 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,389 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,591 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,702 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:00,706 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:00] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 19:04:01,026 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:01] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 19:04:04,461 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "GET /project/cocoa-husks HTTP/1.1" 200 -
+2026-04-17 19:04:04,789 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 19:04:04,789 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 19:04:04,790 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:04:04,791 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 19:04:04,805 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:04:04,807 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:04:04,817 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:04] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,104 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,104 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 19:04:05,430 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,432 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,435 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,438 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,439 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,443 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,763 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 19:04:05,765 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:04:05] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:25,094 - __main__ - WARNING - 404 error: /project/admin
+2026-04-17 19:05:25,094 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:25] "[33mGET /project/admin HTTP/1.1[0m" 404 -
+2026-04-17 19:05:27,645 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:27] "GET / HTTP/1.1" 200 -
+2026-04-17 19:05:27,987 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 19:05:27,989 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:27] "GET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1" 200 -
+2026-04-17 19:05:27,990 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:27] "GET /static/assets/photo_2026-04-14_11-41-55.jpg HTTP/1.1" 200 -
+2026-04-17 19:05:28,007 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/assets/cocoa%20project.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,012 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,013 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/assets/cocoa%20project%202.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,312 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/assets/cocoa%20project%203.jpeg HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,313 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,317 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,337 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[35m[1mGET /static/assets/cocoa%20project%20video.mp4 HTTP/1.1[0m" 206 -
+2026-04-17 19:05:28,510 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,671 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,690 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,690 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,691 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,696 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,822 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:28,977 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:28] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 19:05:29,007 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[36mGET /static/js/service-worker.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:29,437 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "GET / HTTP/1.1" 200 -
+2026-04-17 19:05:29,439 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 19:05:29,440 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:29,677 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:29,755 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:29,761 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 19:05:29,764 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 19:05:29,769 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:29] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 19:05:30,004 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:30] "GET / HTTP/1.1" 200 -
+2026-04-17 19:05:30,063 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 19:05:30,084 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:30] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:30,085 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:30] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:30,087 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:30] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
+2026-04-17 19:05:30,320 - __main__ - WARNING - 404 error: /static/js/analytics.js
+2026-04-17 19:05:30,320 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:05:30] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 19:06:48,339 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 19:06:48,339 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 19:09:16,868 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 19:09:16,869 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

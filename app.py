@@ -293,6 +293,53 @@ def admin_login():
     return render_template('admin/login.html')
 
 
+@app.route('/admin/register', methods=['GET', 'POST'])
+def admin_register():
+    """Admin registration page - create new admin account"""
+    # Check if admin already exists
+    admin_exists = Admin.query.first()
+    
+    if request.method == 'POST':
+        username = request.form.get('username', '').strip()
+        email = request.form.get('email', '').strip()
+        password = request.form.get('password', '')
+        confirm_password = request.form.get('confirm_password', '')
+
+        if not username or not email or not password or not confirm_password:
+            flash('All fields are required.', 'error')
+            return redirect(url_for('admin_register'))
+
+        if password != confirm_password:
+            flash('Passwords do not match.', 'error')
+            return redirect(url_for('admin_register'))
+
+        if len(password) < 6:
+            flash('Password must be at least 6 characters long.', 'error')
+            return redirect(url_for('admin_register'))
+
+        # Check if username already exists
+        if Admin.query.filter_by(username=username).first():
+            flash('Username already exists.', 'error')
+            return redirect(url_for('admin_register'))
+
+        # Check if email already exists
+        if Admin.query.filter_by(email=email).first():
+            flash('Email already exists.', 'error')
+            return redirect(url_for('admin_register'))
+
+        # Create new admin
+        admin = Admin(username=username, email=email)
+        admin.set_password(password)
+        db.session.add(admin)
+        db.session.commit()
+
+        logger.info(f'New admin account created: {username}')
+        flash(f'Admin account created successfully! You can now login.', 'success')
+        return redirect(url_for('admin_login'))
+
+    return render_template('admin/register.html', admin_exists=admin_exists)
+
+
 @app.route('/admin/logout')
 @login_required
 def admin_logout():
