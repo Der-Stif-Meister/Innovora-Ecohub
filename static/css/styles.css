@@ -190,6 +190,8 @@ p {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .lang-option {
