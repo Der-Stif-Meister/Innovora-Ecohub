@@ -1,12 +1,12 @@
 {% extends 'admin/base.html' %}
 
-{% block title %}Add Team Member - EcoHub Admin{% endblock %}
+{% block title %}Edit Team Member - EcoHub Admin{% endblock %}
 
 {% block content %}
 <div class="admin-content">
     <div class="admin-header">
-        <h1>Add Team Member</h1>
-        <p>Create a new team member profile</p>
+        <h1>Edit Team Member</h1>
+        <p>Update team member profile</p>
     </div>
 
     <div class="admin-form-container">
@@ -17,33 +17,33 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Full name">
+                        <input type="text" id="name" name="name" required value="{{ team_member.name }}">
                     </div>
                     <div class="form-group">
                         <label for="role">Role *</label>
-                        <input type="text" id="role" name="role" required placeholder="e.g., Team Lead">
+                        <input type="text" id="role" name="role" required value="{{ team_member.role }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="department">Department</label>
-                        <input type="text" id="department" name="department" placeholder="e.g., Operations">
+                        <input type="text" id="department" name="department" value="{{ team_member.department or '' }}">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="email@example.com">
+                        <input type="email" id="email" name="email" value="{{ team_member.email or '' }}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="bio">Bio</label>
-                    <textarea id="bio" name="bio" placeholder="Short description about the team member" rows="4"></textarea>
+                    <textarea id="bio" name="bio" rows="4">{{ team_member.bio or '' }}</textarea>
                 </div>
 
                 <div class="form-group checkbox-group">
                     <label class="checkbox-label">
-                        <input type="checkbox" id="show_email" name="show_email">
+                        <input type="checkbox" id="show_email" name="show_email" {% if team_member.show_email %}checked{% endif %}>
                         <span>Show email on public profile</span>
                     </label>
                 </div>
@@ -53,6 +53,10 @@
                 <h2>Profile Image</h2>
                 <div class="image-upload-section">
                     <div class="image-preview-container">
+                        {% if team_member.image_filename %}
+                            <p class="current-image-label">Current Image:</p>
+                            <img src="/static/uploads/{{ team_member.image_filename }}" alt="{{ team_member.name }}" class="current-image">
+                        {% endif %}
                         <img id="imagePreview" src="" alt="Image preview" class="image-preview hidden">
                     </div>
                     <label for="image" class="file-upload-label">
@@ -74,13 +78,13 @@
                         <label for="linkedin_url">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </label>
-                        <input type="url" id="linkedin_url" name="linkedin_url" placeholder="https://linkedin.com/in/...">
+                        <input type="url" id="linkedin_url" name="linkedin_url" value="{{ team_member.linkedin_url or '' }}">
                     </div>
                     <div class="form-group">
                         <label for="twitter_url">
                             <i class="fab fa-twitter"></i> X / Twitter
                         </label>
-                        <input type="url" id="twitter_url" name="twitter_url" placeholder="https://twitter.com/...">
+                        <input type="url" id="twitter_url" name="twitter_url" value="{{ team_member.twitter_url or '' }}">
                     </div>
                 </div>
 
@@ -89,13 +93,13 @@
                         <label for="facebook_url">
                             <i class="fab fa-facebook"></i> Facebook
                         </label>
-                        <input type="url" id="facebook_url" name="facebook_url" placeholder="https://facebook.com/...">
+                        <input type="url" id="facebook_url" name="facebook_url" value="{{ team_member.facebook_url or '' }}">
                     </div>
                     <div class="form-group">
                         <label for="tiktok_url">
                             <i class="fab fa-tiktok"></i> TikTok
                         </label>
-                        <input type="url" id="tiktok_url" name="tiktok_url" placeholder="https://tiktok.com/...">
+                        <input type="url" id="tiktok_url" name="tiktok_url" value="{{ team_member.tiktok_url or '' }}">
                     </div>
                 </div>
 
@@ -103,13 +107,13 @@
                     <label for="other_url">
                         <i class="fas fa-link"></i> Other Link
                     </label>
-                    <input type="url" id="other_url" name="other_url" placeholder="https://example.com">
+                    <input type="url" id="other_url" name="other_url" value="{{ team_member.other_url or '' }}">
                 </div>
             </div>
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Add Team Member
+                    <i class="fas fa-save"></i> Update Team Member
                 </button>
                 <a href="{{ url_for('admin_team') }}" class="btn btn-secondary">
                     <i class="fas fa-times"></i> Cancel
@@ -226,6 +230,21 @@ function previewImage(input) {
     text-align: center;
 }
 
+.current-image-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.current-image {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
 .image-preview {
     max-width: 200px;
     max-height: 200px;
@@ -337,151 +356,5 @@ function previewImage(input) {
         width: 100%;
     }
 }
-            font-size: 0.85rem;
-        }
-
-        .image-preview {
-            margin-top: 1rem;
-            display: none;
-            text-align: center;
-        }
-
-        .image-preview.active {
-            display: block;
-        }
-
-        .image-preview img {
-            max-width: 200px;
-            max-height: 200px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #1e4226, #66cc33);
-            color: white;
-            flex: 1;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: #e0e0e0;
-            color: #333;
-            flex: 1;
-        }
-
-        .btn-secondary:hover {
-            background: #d0d0d0;
-        }
-
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="form-card">
-            <h1>Add New Team Member</h1>
-
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">{{ message }}</div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-            <form method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required 
-                           placeholder="e.g., John Doe"
-                           autocomplete="off">
-                </div>
-
-                <div class="form-group">
-                    <label for="role">Role *</label>
-                    <input type="text" id="role" name="role" required 
-                           placeholder="e.g., Lead Developer"
-                           autocomplete="off">
-                </div>
-
-                <div class="form-group">
-                    <label for="image">Profile Image</label>
-                    <div class="file-upload-wrapper">
-                        <input type="file" id="image" name="image" accept="image/*">
-                        <label for="image" class="file-upload-label">
-                            <span class="icon">📷</span>
-                            <span>Choose Image</span>
-                            <small>(jpg, png, webp, max 5MB)</small>
-                        </label>
-                        <div id="image-preview" class="image-preview"></div>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Add Team Member</button>
-                    <a href="{{ url_for('admin_team') }}" class="btn btn-secondary">Cancel</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('image').addEventListener('change', function(e) {
-            const preview = document.getElementById('image-preview');
-            const file = e.target.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    preview.innerHTML = `
-                        <img src="${event.target.result}" alt="Preview">
-                        <p><small>${file.name}</small></p>
-                    `;
-                    preview.classList.add('active');
-                };
-                reader.readAsDataURL(file);
-            } else {
-                preview.classList.remove('active');
-                preview.innerHTML = '';
-            }
-        });
-    </script>
-</body>
-</html>
+</style>
+{% endblock %}

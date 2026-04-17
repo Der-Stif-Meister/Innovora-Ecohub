@@ -214,3 +214,15 @@
 2026-04-17 15:30:58,786 - werkzeug - INFO -  * Restarting with stat
 2026-04-17 15:30:59,924 - werkzeug - WARNING -  * Debugger is active!
 2026-04-17 15:30:59,936 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-17 15:43:16,013 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-17 15:43:17,308 - werkzeug - INFO -  * Restarting with stat
+2026-04-17 15:43:20,958 - werkzeug - WARNING -  * Debugger is active!
+2026-04-17 15:43:20,982 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-17 15:46:21,873 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-17 15:46:23,714 - werkzeug - INFO -  * Restarting with stat
+2026-04-17 15:46:27,022 - werkzeug - WARNING -  * Debugger is active!
+2026-04-17 15:46:27,046 - werkzeug - INFO -  * Debugger PIN: 784-020-871
+2026-04-17 15:47:10,404 - werkzeug - INFO -  * Detected change in 'C:\\Users\\samue\\Documents\\EcoHub-Website\\app.py', reloading
+2026-04-17 15:47:10,711 - werkzeug - INFO -  * Restarting with stat
+2026-04-17 15:47:13,332 - werkzeug - WARNING -  * Debugger is active!
+2026-04-17 15:47:13,346 - werkzeug - INFO -  * Debugger PIN: 784-020-871

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="nav.team">Team | INNOVORA EcoHub Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
     <meta name="theme-color" content="#1e4226">
@@ -69,27 +70,80 @@
             <p class="section-subtitle" data-i18n="team.subtitle">Meet the brilliant minds driving innovation in sustainable technology</p>
 
             {% if team_members %}
-                <div class="team-grid">
+                <div class="team-grid-premium">
                     {% for member in team_members %}
-                        <div class="team-card">
-                            <div class="team-image">
+                        <div class="team-card-premium" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+                            <div class="team-card-badge">{{ loop.index }}</div>
+                            
+                            <div class="team-members-image-wrapper">
                                 {% if member.image_filename %}
                                     <img src="{{ url_for('static', filename='uploads/' ~ member.image_filename) }}" 
-                                         alt="{{ member.name }}">
+                                         alt="{{ member.name }}" class="team-profile-image">
                                 {% else %}
-                                    <div class="team-no-image">👤</div>
+                                    <div class="team-no-image-premium">
+                                        <i class="fas fa-user"></i>
+                                    </div>
                                 {% endif %}
                             </div>
-                            <div class="team-card-content">
-                                <div class="team-member-name">{{ member.name }}</div>
-                                <div class="team-member-role">{{ member.role }}</div>
+
+                            <div class="team-card-content-premium">
+                                <h3 class="team-member-name-premium">{{ member.name }}</h3>
+                                <p class="team-member-role-premium">{{ member.role }}</p>
+                                
+                                {% if member.department %}
+                                    <p class="team-member-department">{{ member.department }}</p>
+                                {% endif %}
+                                
+                                {% if member.bio %}
+                                    <p class="team-member-bio">{{ member.bio }}</p>
+                                {% endif %}
+
+                                {% if member.show_email and member.email %}
+                                    <a href="mailto:{{ member.email }}" class="team-member-email">
+                                        <i class="fas fa-envelope"></i> {{ member.email }}
+                                    </a>
+                                {% endif %}
+
+                                <div class="social-links-premium">
+                                    {% if member.linkedin_url %}
+                                        <a href="{{ member.linkedin_url }}" target="_blank" rel="noopener noreferrer" 
+                                           class="social-icon-premium linkedin" title="LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    {% endif %}
+                                    {% if member.twitter_url %}
+                                        <a href="{{ member.twitter_url }}" target="_blank" rel="noopener noreferrer"
+                                           class="social-icon-premium twitter" title="X / Twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    {% endif %}
+                                    {% if member.facebook_url %}
+                                        <a href="{{ member.facebook_url }}" target="_blank" rel="noopener noreferrer"
+                                           class="social-icon-premium facebook" title="Facebook">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    {% endif %}
+                                    {% if member.tiktok_url %}
+                                        <a href="{{ member.tiktok_url }}" target="_blank" rel="noopener noreferrer"
+                                           class="social-icon-premium tiktok" title="TikTok">
+                                            <i class="fab fa-tiktok"></i>
+                                        </a>
+                                    {% endif %}
+                                    {% if member.other_url %}
+                                        <a href="{{ member.other_url }}" target="_blank" rel="noopener noreferrer"
+                                           class="social-icon-premium other" title="Website">
+                                            <i class="fas fa-globe"></i>
+                                        </a>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
             {% else %}
-                <div style="text-align: center; padding: 3rem; color: #999;">
-                    <p>Team members coming soon!</p>
+                <div class="empty-team-state">
+                    <i class="fas fa-users"></i>
+                    <p data-i18n="team.empty">Team members coming soon!</p>
                 </div>
             {% endif %}
         </div>

@@ -143,12 +143,25 @@ class ContactMessage(db.Model):
 
 
 class TeamMember(db.Model):
-    """Team member profiles"""
+    """Team member profiles with advanced features"""
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), nullable=False)
+    name = db.Column(db.String(120), nullable=False, index=True)
     role = db.Column(db.String(120), nullable=False)
+    department = db.Column(db.String(120))
+    bio = db.Column(db.Text)
     image_filename = db.Column(db.String(255))
+    email = db.Column(db.String(120))
+    show_email = db.Column(db.Boolean, default=False)
+    
+    # Social media links
+    linkedin_url = db.Column(db.String(500))
+    twitter_url = db.Column(db.String(500))
+    facebook_url = db.Column(db.String(500))
+    tiktok_url = db.Column(db.String(500))
+    other_url = db.Column(db.String(500))
+    
     created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def __repr__(self):
         return f'<TeamMember {self.name}>'
@@ -443,6 +456,16 @@ def admin_team_add():
         try:
             name = request.form.get('name', '').strip()
             role = request.form.get('role', '').strip()
+            department = request.form.get('department', '').strip()
+            bio = request.form.get('bio', '').strip()
+            email = request.form.get('email', '').strip()
+            show_email = request.form.get('show_email') == 'on'
+            
+            linkedin_url = request.form.get('linkedin_url', '').strip()
+            twitter_url = request.form.get('twitter_url', '').strip()
+            facebook_url = request.form.get('facebook_url', '').strip()
+            tiktok_url = request.form.get('tiktok_url', '').strip()
+            other_url = request.form.get('other_url', '').strip()
             
             # Validation
             if not name or not role:
@@ -465,7 +488,16 @@ def admin_team_add():
             team_member = TeamMember(
                 name=name,
                 role=role,
-                image_filename=image_filename
+                department=department,
+                bio=bio,
+                email=email,
+                show_email=show_email,
+                image_filename=image_filename,
+                linkedin_url=linkedin_url,
+                twitter_url=twitter_url,
+                facebook_url=facebook_url,
+                tiktok_url=tiktok_url,
+                other_url=other_url
             )
             db.session.add(team_member)
             db.session.commit()
@@ -480,6 +512,65 @@ def admin_team_add():
             return redirect(url_for('admin_team_add'))
 
     return render_template('admin/team_add.html')
+
+
+@app.route('/admin/team/<int:team_id>/edit', methods=['GET', 'POST'])
+@login_required
+def admin_team_edit(team_id):
+    """Edit team member"""
+    team_member = TeamMember.query.get_or_404(team_id)
+    
+    if request.method == 'POST':
+        try:
+            team_member.name = request.form.get('name', '').strip()
+            team_member.role = request.form.get('role', '').strip()
+            team_member.department = request.form.get('department', '').strip()
+            team_member.bio = request.form.get('bio', '').strip()
+            team_member.email = request.form.get('email', '').strip()
+            team_member.show_email = request.form.get('show_email') == 'on'
+            
+            team_member.linkedin_url = request.form.get('linkedin_url', '').strip()
+            team_member.twitter_url = request.form.get('twitter_url', '').strip()
+            team_member.facebook_url = request.form.get('facebook_url', '').strip()
+            team_member.tiktok_url = request.form.get('tiktok_url', '').strip()
+            team_member.other_url = request.form.get('other_url', '').strip()
+            
+            # Validation
+            if not team_member.name or not team_member.role:
+                flash('Name and role are required.', 'error')
+                return redirect(url_for('admin_team_edit', team_id=team_id))
+
+            # Handle image upload (optional)
+            if 'image' in request.files:
+                file = request.files['image']
+                if file and file.filename and allowed_file(file.filename):
+                    # Delete old image if exists
+                    if team_member.image_filename:
+                        old_path = os.path.join(app.config['UPLOAD_FOLDER'], team_member.image_filename)
+                        if os.path.exists(old_path):
+                            os.remove(old_path)
+                    
+                    # Save new image
+                    filename = secure_filename(file.filename)
+                    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
+                    image_filename = timestamp + 'team_' + filename
+                    file_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+                    file.save(file_path)
+                    team_member.image_filename = image_filename
+                    logger.info(f'Team image updated: {image_filename}')
+
+            db.session.commit()
+
+            logger.info(f'Team member updated: {team_member.name}')
+            flash(f'Team member "{team_member.name}" updated successfully!', 'success')
+            return redirect(url_for('admin_team'))
+
+        except Exception as e:
+            logger.error(f'Error updating team member: {str(e)}')
+            flash('An error occurred while updating team member.', 'error')
+            return redirect(url_for('admin_team_edit', team_id=team_id))
+
+    return render_template('admin/team_edit.html', team_member=team_member)
 
 
 @app.route('/admin/team/<int:team_id>/delete', methods=['POST'])

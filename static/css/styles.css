@@ -1222,14 +1222,250 @@ p {
 }
 
 /* ============================================
-   TEAM SECTION
+   TEAM SECTION - PREMIUM DESIGN
    ============================================ */
 
 .team-section {
     padding: 6rem 0;
-    background: var(--light-gray);
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
 }
 
+.team-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    animation: fadeInTeam 0.8s ease-out;
+}
+
+@keyframes fadeInTeam {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardStagger {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.team-card-premium {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    animation: cardStagger 0.6s ease-out forwards;
+}
+
+.team-card-premium:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 14px 45px rgba(30, 66, 38, 0.15);
+}
+
+.team-card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(102, 204, 51, 0.3);
+}
+
+.team-members-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.team-card-premium:hover .team-profile-image {
+    transform: scale(1.08);
+}
+
+.team-no-image-premium {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.team-card-content-premium {
+    padding: 2rem 1.75rem;
+}
+
+.team-member-name-premium {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+
+.team-member-role-premium {
+    font-size: 0.95rem;
+    color: var(--accent-green);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.team-member-department {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.team-member-bio {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    min-height: 2.7em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.team-member-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: rgba(102, 204, 51, 0.1);
+    color: var(--primary-green);
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    transition: var(--transition);
+}
+
+.team-member-email:hover {
+    background: rgba(102, 204, 51, 0.2);
+    transform: translateX(2px);
+}
+
+.social-links-premium {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.social-icon-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, rgba(102, 204, 51, 0.15), rgba(139, 179, 54, 0.15));
+    border: 1px solid rgba(102, 204, 51, 0.3);
+    border-radius: 50%;
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.social-icon-premium:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 15px rgba(102, 204, 51, 0.2);
+}
+
+.social-icon-premium.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+.social-icon-premium.twitter:hover {
+    background: #1da1f2;
+    color: white;
+    border-color: #1da1f2;
+}
+
+.social-icon-premium.facebook:hover {
+    background: #1877f2;
+    color: white;
+    border-color: #1877f2;
+}
+
+.social-icon-premium.tiktok:hover {
+    background: #000000;
+    color: white;
+    border-color: #000000;
+}
+
+.social-icon-premium.other:hover {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.empty-team-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 12px;
+    border: 2px dashed #ddd;
+}
+
+.empty-team-state i {
+    font-size: 3.5rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.empty-team-state p {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+/* Legacy team styles for backward compatibility */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1495,6 +1731,42 @@ p {
     .team-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .team-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .team-card-premium {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .team-card-badge {
+        top: 8px;
+        right: 8px;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .team-members-image-wrapper {
+        height: 240px;
+    }
+
+    .team-member-name-premium {
+        font-size: 1.2rem;
+    }
+
+    .team-member-role-premium {
+        font-size: 0.85rem;
+    }
+
+    .social-icon-premium {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
     }
 
     .nav-container {
