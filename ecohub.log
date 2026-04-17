@@ -376,3 +376,187 @@
  * Running on http://127.0.0.1:5000
  * Running on http://10.163.36.186:5000
 2026-04-17 16:42:32,106 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:17:18,185 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:18] "GET /team HTTP/1.1" 200 -
+2026-04-17 17:17:18,493 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:18] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-17 17:17:18,615 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 17:17:18,616 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:18] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:17:18,623 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:18] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 17:17:18,674 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,015 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,015 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,019 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,022 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,026 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,027 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,320 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,320 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,320 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,341 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,653 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,919 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:19,969 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:19] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:20,228 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:20] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:20,279 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:20] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:17:20,536 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:17:20] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:18:14,921 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\Documents\EcoHub-Website\app.py", line 711, in index
+    # PUBLIC ROUTES
+               ^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\samue\Documents\EcoHub-Website\templates\index.html", line 146, in top-level template code
+    <a href="{{ url_for('project_cocoa') }}" style="text-decoration: none;">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'project_cocoa'. Did you mean 'delete_alert' instead?
+2026-04-17 17:18:14,948 - __main__ - ERROR - 500 error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-17 17:18:14,957 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:18:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-04-17 17:18:17,591 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\Documents\EcoHub-Website\app.py", line 711, in index
+    # PUBLIC ROUTES
+               ^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\samue\Documents\EcoHub-Website\templates\index.html", line 146, in top-level template code
+    <a href="{{ url_for('project_cocoa') }}" style="text-decoration: none;">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\samue\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'project_cocoa'. Did you mean 'delete_alert' instead?
+2026-04-17 17:18:17,597 - __main__ - ERROR - 500 error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2026-04-17 17:18:17,597 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:18:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-04-17 17:21:53,707 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:53] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:21:53,883 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:53] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:21:54,028 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:54] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:21:54,208 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:54] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:21:54,337 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:54] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:21:54,533 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:54] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:21:54,647 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:21:54] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:31,913 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 17:31:31,915 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:31:51,709 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:51] "GET /team HTTP/1.1" 200 -
+2026-04-17 17:31:52,251 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 17:31:52,261 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 17:31:52,261 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,428 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,458 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,826 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,826 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,826 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,841 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,854 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:52,864 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:52] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,142 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,142 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,142 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,163 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,338 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,483 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,648 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,807 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:53,968 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:53] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:31:54,122 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:31:54] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:38:28,071 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 17:38:28,072 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:41:12,250 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 17:41:12,250 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:46:14,500 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 17:46:14,500 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:48:26,942 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 17:48:26,942 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:49:07,033 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 17:49:07,033 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 17:49:26,039 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "GET /team HTTP/1.1" 200 -
+2026-04-17 17:49:26,342 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,459 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/assets/photo_2026-04-14_11-41-52.jpg HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,461 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,525 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,893 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:26,905 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:26] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,210 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,228 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,229 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,230 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,395 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,539 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,706 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:27,839 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:27] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:28,028 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:28] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 17:49:28,162 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 17:49:28] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -

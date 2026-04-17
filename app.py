@@ -255,6 +255,14 @@ def send_reply_email(recipient_email, name):
 # ADMIN ROUTES
 # ============================================
 
+@app.route('/admin')
+def admin():
+    """Admin root - redirect to dashboard if authenticated, otherwise to login"""
+    if current_user.is_authenticated:
+        return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('admin_login'))
+
+
 @app.route('/admin/login', methods=['GET', 'POST'])
 @limiter.limit("5 per minute")
 def admin_login():

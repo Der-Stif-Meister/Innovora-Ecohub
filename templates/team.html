@@ -25,8 +25,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo-container">
-                <img src="{{ url_for('static', filename='assets/logo_small.png') }}" alt="Logo" class="navbar-logo">
-                <span class="brand-text" data-i18n="brand.name">INNOVORA ECOHUB</span>
+                <img src="{{ url_for('static', filename='assets/photo_2026-04-14_11-41-52.jpg') }}" alt="INNOVORA Logo" class="navbar-logo">
+                <div class="brand-info">
+                    <span class="brand-text">INNOVORA</span>
+                    <span class="brand-subtext">EcoHub Group</span>
+                </div>
             </a>
 
             <ul class="nav-menu">
@@ -70,25 +73,23 @@
             <p class="section-subtitle" data-i18n="team.subtitle">Meet the brilliant minds driving innovation in sustainable technology</p>
 
             {% if team_members %}
-                <div class="team-grid-premium">
+                <div class="team-grid">
                     {% for member in team_members %}
-                        <div class="team-card-premium" style="animation-delay: {{ loop.index0 * 0.1 }}s">
-                            <div class="team-card-badge">{{ loop.index }}</div>
-                            
-                            <div class="team-members-image-wrapper">
+                        <div class="team-card" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+                            <div class="team-card-image">
                                 {% if member.image_filename %}
                                     <img src="{{ url_for('static', filename='uploads/' ~ member.image_filename) }}" 
                                          alt="{{ member.name }}" class="team-profile-image">
                                 {% else %}
-                                    <div class="team-no-image-premium">
+                                    <div class="team-no-image">
                                         <i class="fas fa-user"></i>
                                     </div>
                                 {% endif %}
                             </div>
 
-                            <div class="team-card-content-premium">
-                                <h3 class="team-member-name-premium">{{ member.name }}</h3>
-                                <p class="team-member-role-premium">{{ member.role }}</p>
+                            <div class="team-card-content">
+                                <h3 class="team-member-name">{{ member.name }}</h3>
+                                <p class="team-member-role">{{ member.role }}</p>
                                 
                                 {% if member.department %}
                                     <p class="team-member-department">{{ member.department }}</p>
@@ -98,41 +99,20 @@
                                     <p class="team-member-bio">{{ member.bio }}</p>
                                 {% endif %}
 
-                                {% if member.show_email and member.email %}
-                                    <a href="mailto:{{ member.email }}" class="team-member-email">
-                                        <i class="fas fa-envelope"></i> {{ member.email }}
-                                    </a>
-                                {% endif %}
-
-                                <div class="social-links-premium">
+                                <div class="team-social-links">
                                     {% if member.linkedin_url %}
-                                        <a href="{{ member.linkedin_url }}" target="_blank" rel="noopener noreferrer" 
-                                           class="social-icon-premium linkedin" title="LinkedIn">
-                                            <i class="fab fa-linkedin-in"></i>
+                                        <a href="{{ member.linkedin_url }}" target="_blank" class="social-link">
+                                            <i class="fab fa-linkedin"></i>
                                         </a>
                                     {% endif %}
                                     {% if member.twitter_url %}
-                                        <a href="{{ member.twitter_url }}" target="_blank" rel="noopener noreferrer"
-                                           class="social-icon-premium twitter" title="X / Twitter">
+                                        <a href="{{ member.twitter_url }}" target="_blank" class="social-link">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     {% endif %}
                                     {% if member.facebook_url %}
-                                        <a href="{{ member.facebook_url }}" target="_blank" rel="noopener noreferrer"
-                                           class="social-icon-premium facebook" title="Facebook">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                    {% endif %}
-                                    {% if member.tiktok_url %}
-                                        <a href="{{ member.tiktok_url }}" target="_blank" rel="noopener noreferrer"
-                                           class="social-icon-premium tiktok" title="TikTok">
-                                            <i class="fab fa-tiktok"></i>
-                                        </a>
-                                    {% endif %}
-                                    {% if member.other_url %}
-                                        <a href="{{ member.other_url }}" target="_blank" rel="noopener noreferrer"
-                                           class="social-icon-premium other" title="Website">
-                                            <i class="fas fa-globe"></i>
+                                        <a href="{{ member.facebook_url }}" target="_blank" class="social-link">
+                                            <i class="fab fa-facebook"></i>
                                         </a>
                                     {% endif %}
                                 </div>
@@ -141,10 +121,7 @@
                     {% endfor %}
                 </div>
             {% else %}
-                <div class="empty-team-state">
-                    <i class="fas fa-users"></i>
-                    <p data-i18n="team.empty">Team members coming soon!</p>
-                </div>
+                <p class="no-team-members" data-i18n="team.no_members">No team members to display.</p>
             {% endif %}
         </div>
     </section>
