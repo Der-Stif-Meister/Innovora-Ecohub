@@ -502,6 +502,12 @@
                         <!-- Slide 3: Cocoa Project Image 3 -->
                         <img src="{{ url_for('static', filename='assets/cocoa project 3.jpeg') }}" alt="Sustainable Products" class="carousel-image" style="width: 100%; height: 100%; object-fit: cover; display: none;">
                         
+                        <!-- Slide 4: Cocoa Project Video -->
+                        <video class="carousel-image" style="width: 100%; height: 100%; object-fit: cover; display: none;" controls>
+                            <source src="{{ url_for('static', filename='assets/cocoa project video.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
                         <!-- Carousel Controls -->
                         <button class="carousel-btn prev" onclick="changeCocoaSlide(-1)" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.3rem; z-index: 10; font-weight: bold; color: #1e4226;">‹</button>
                         <button class="carousel-btn next" onclick="changeCocoaSlide(1)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.3rem; z-index: 10; font-weight: bold; color: #1e4226;">›</button>
@@ -512,6 +518,7 @@
                         <span class="indicator active" onclick="goToCocoaSlide(0)" style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-green); cursor: pointer; transition: all 0.3s ease;"></span>
                         <span class="indicator" onclick="goToCocoaSlide(1)" style="width: 10px; height: 10px; border-radius: 50%; background: var(--medium-gray); cursor: pointer; transition: all 0.3s ease;"></span>
                         <span class="indicator" onclick="goToCocoaSlide(2)" style="width: 10px; height: 10px; border-radius: 50%; background: var(--medium-gray); cursor: pointer; transition: all 0.3s ease;"></span>
+                        <span class="indicator" onclick="goToCocoaSlide(3)" style="width: 10px; height: 10px; border-radius: 50%; background: var(--medium-gray); cursor: pointer; transition: all 0.3s ease;"></span>
                     </div>
                 </div>
 
@@ -582,7 +589,7 @@
 
         // Cocoa Project Carousel
         let cocoaSlideIndex = 0;
-        const cocoaSlides = 3;
+        const cocoaSlides = 4;
 
         function changeCocoaSlide(n) {
             showCocoaSlide(cocoaSlideIndex += n);
@@ -602,7 +609,7 @@
             slides.forEach(slide => slide.style.display = 'none');
             indicators.forEach(ind => ind.classList.remove('active'));
             
-            slides[cocoaSlideIndex].style.display = 'flex';
+            slides[cocoaSlideIndex].style.display = 'block';
             indicators[cocoaSlideIndex].classList.add('active');
         }
     </script>
