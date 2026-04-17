@@ -349,3 +349,30 @@
 2026-04-17 16:32:14,733 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:32:14] "[36mGET /static/js/advanced-features.js HTTP/1.1[0m" 304 -
 2026-04-17 16:32:14,942 - __main__ - WARNING - 404 error: /static/js/analytics.js
 2026-04-17 16:32:14,942 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:32:14] "[33mGET /static/js/analytics.js HTTP/1.1[0m" 404 -
+2026-04-17 16:34:14,206 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:14] "GET /team HTTP/1.1" 200 -
+2026-04-17 16:34:14,323 - __main__ - WARNING - 404 error: /static/assets/logo_small.png
+2026-04-17 16:34:14,324 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:14] "[33mGET /static/assets/logo_small.png HTTP/1.1[0m" 404 -
+2026-04-17 16:34:14,622 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:14] "[36mGET /static/js/i18n.js HTTP/1.1[0m" 304 -
+2026-04-17 16:34:14,622 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:14] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-17 16:34:14,656 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,236 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,335 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,335 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,335 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,335 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,344 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,553 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,656 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,656 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/en.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,656 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/es.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,737 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/fr.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:15,969 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:15] "[36mGET /static/js/i18n/de.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:16,038 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:16] "[36mGET /static/js/i18n/zh.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:16,287 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:16] "[36mGET /static/js/i18n/pt.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:16,354 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:16] "[36mGET /static/js/i18n/ar.json HTTP/1.1[0m" 304 -
+2026-04-17 16:34:16,601 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 16:34:16] "[36mGET /static/js/i18n/ja.json HTTP/1.1[0m" 304 -
+2026-04-17 16:42:32,104 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.163.36.186:5000
+2026-04-17 16:42:32,106 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

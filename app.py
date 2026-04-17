@@ -700,6 +700,13 @@ def team():
     return render_template('team.html', team_members=team_members, active_alert=active_alert)
 
 
+@app.route('/project/cocoa-husks')
+def project_cocoa():
+    """Display Cocoa Husks Sustainability Project"""
+    active_alert = Alert.query.filter_by(is_active=True).order_by(Alert.created_at.desc()).first()
+    return render_template('project_cocoa.html', active_alert=active_alert)
+
+
 # ============================================
 # PUBLIC ROUTES
 # ============================================
