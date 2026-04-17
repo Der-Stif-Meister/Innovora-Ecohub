@@ -820,6 +820,26 @@ p {
     align-items: center;
 }
 
+.project-content.clickable-project {
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.project-content.clickable-project:hover {
+    background: rgba(102, 204, 51, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(30, 66, 38, 0.15);
+}
+
+.project-content.clickable-project:hover .project-hover-overlay {
+    background: rgba(102, 204, 51, 0.15) !important;
+}
+
+.project-content.clickable-project:hover h3 {
+    color: var(--accent-green);
+}
+
 .project-image {
     width: 100%;
     aspect-ratio: 1;
