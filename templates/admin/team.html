@@ -9,9 +9,14 @@
             <h1>Team Management</h1>
             <p>Manage team members & profiles</p>
         </div>
-        <a href="{{ url_for('admin_team_add') }}" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Add Team Member
-        </a>
+        <div style="display: flex; gap: 0.8rem;">
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+            <a href="{{ url_for('admin_team_add') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Team Member
+            </a>
+        </div>
     </div>
 
     <div class="team-management-section">

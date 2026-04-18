@@ -5,8 +5,13 @@
 {% block content %}
 <div class="admin-content">
     <div class="admin-header">
-        <h1>Add Team Member</h1>
-        <p>Create a new team member profile</p>
+        <div>
+            <h1>Add Team Member</h1>
+            <p>Create a new team member profile</p>
+        </div>
+        <a href="{{ url_for('admin_team') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
     </div>
 
     <div class="admin-form-container">

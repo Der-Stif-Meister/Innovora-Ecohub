@@ -31,7 +31,7 @@ app = Flask(__name__)
 
 # Security Configuration
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
-app.config['DEBUG'] = os.getenv('FLASK_ENV') == 'development'
+app.config['DEBUG'] = True  # Enable debug mode for local development
 
 # Database Configuration
 BASE_DIR = Path(__file__).resolve().parent
@@ -82,12 +82,19 @@ limiter = Limiter(
 # LOGGING CONFIGURATION
 # ============================================
 
+# Configure logging - both file and console
 logging.basicConfig(
-    filename='ecohub.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('ecohub.log'),
+        logging.StreamHandler()  # Also log to console for debugging
+    ]
 )
 logger = logging.getLogger(__name__)
+logger.info("=" * 80)
+logger.info("EcoHub Application Started - Debug Mode Enabled")
+logger.info("=" * 80)
 
 # ============================================
 # DATABASE MODELS

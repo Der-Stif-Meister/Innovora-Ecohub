@@ -5,8 +5,13 @@
 {% block content %}
 <div class="admin-content-wrapper">
     <div class="admin-header">
-        <h1>Edit Program</h1>
-        <p>Update program details and media</p>
+        <div>
+            <h1>Edit Program</h1>
+            <p>Update program details and media</p>
+        </div>
+        <a href="{{ url_for('admin_programs') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
     </div>
 
     <form method="POST" enctype="multipart/form-data" class="admin-form">

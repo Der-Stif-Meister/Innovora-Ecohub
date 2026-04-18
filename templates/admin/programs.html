@@ -5,8 +5,13 @@
 {% block content %}
 <div class="admin-content-wrapper">
     <div class="admin-header">
-        <h1>Programs Management</h1>
-        <p>Manage upcoming programs, webinars, and projects</p>
+        <div>
+            <h1>Programs Management</h1>
+            <p>Manage upcoming programs, webinars, and projects</p>
+        </div>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
     </div>
 
     <div class="admin-actions">
