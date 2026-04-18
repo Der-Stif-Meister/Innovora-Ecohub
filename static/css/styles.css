@@ -1846,4 +1846,8 @@ p {
     .footer-logo h3 {
         font-size: 1.5rem;
     }
+
+    .social-links {
+        justify-content: center;
+    }
 }
