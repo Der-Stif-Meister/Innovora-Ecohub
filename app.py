@@ -293,6 +293,32 @@ def send_reply_email(recipient_email, name):
         logger.error(f'Failed to send reply email: {str(e)}')
         return False
 
+# ============================================
+# DATABASE INITIALIZATION
+# ============================================
+
+def initialize_database():
+    """Initialize database tables if they don't exist"""
+    try:
+        with app.app_context():
+            # Create all tables if they don't exist
+            db.create_all()
+            
+            # Ensure at least one admin exists for the app to function
+            admin_count = Admin.query.count()
+            if admin_count == 0:
+                logger.warning('No admin users found in database. Please create one via /admin/register')
+            
+            logger.info('Database initialization completed successfully')
+    except Exception as e:
+        logger.error(f'Database initialization error: {str(e)}')
+        raise
+
+# Initialize database on app startup
+try:
+    initialize_database()
+except Exception as e:
+    logger.error(f'Failed to initialize database: {str(e)}')
 
 # ============================================
 # ADMIN ROUTES
