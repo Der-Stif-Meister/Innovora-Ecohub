@@ -179,6 +179,9 @@
                 <a href="{{ url_for('admin_team') }}" class="{% if request.endpoint in ['admin_team', 'admin_team_add', 'admin_team_edit'] %}active{% endif %}">
                     <i class="fas fa-users"></i> Team
                 </a>
+                <a href="{{ url_for('admin_programs') }}" class="{% if request.endpoint in ['admin_programs', 'admin_programs_add', 'admin_programs_edit'] %}active{% endif %}">
+                    <i class="fas fa-calendar-alt"></i> Programs
+                </a>
                 <a href="{{ url_for('admin_alerts') }}" class="{% if request.endpoint in ['admin_alerts', 'admin_alerts_add'] %}active{% endif %}">
                     <i class="fas fa-bell"></i> Alerts
                 </a>

@@ -1,0 +1,146 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Add Program - EcoHub Admin{% endblock %}
+
+{% block content %}
+<div class="admin-content-wrapper">
+    <div class="admin-header">
+        <h1>Add New Program</h1>
+        <p>Create upcoming webinar, program, or project</p>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="admin-form">
+        <div class="form-group">
+            <label for="title">Program Title *</label>
+            <input type="text" id="title" name="title" required placeholder="e.g., Sustainable Technology Webinar">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="category">Category *</label>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="webinar">Webinar</option>
+                    <option value="program">Program</option>
+                    <option value="project">Project</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Online / New York City">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="event_date">Date *</label>
+                <input type="date" id="event_date" name="event_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="event_time">Time *</label>
+                <input type="time" id="event_time" name="event_time" required value="12:00">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description *</label>
+            <textarea id="description" name="description" rows="6" required placeholder="Describe your program in detail..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="media_type">Media Type</label>
+            <select id="media_type" name="media_type" onchange="toggleMediaUpload()">
+                <option value="none">None (Text Only)</option>
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+            </select>
+        </div>
+
+        <div id="media-upload-section" style="display: none;">
+            <div class="form-group">
+                <label for="media_file">Upload Media File</label>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="media_file" name="media_file" accept="image/*,video/*">
+                    <small id="media-hint"></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create Program</button>
+            <a href="{{ url_for('admin_programs') }}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+function toggleMediaUpload() {
+    const mediaType = document.getElementById('media_type').value;
+    const section = document.getElementById('media-upload-section');
+    const hint = document.getElementById('media-hint');
+    const fileInput = document.getElementById('media_file');
+
+    if (mediaType !== 'none') {
+        section.style.display = 'block';
+        if (mediaType === 'image') {
+            hint.textContent = 'Supported formats: PNG, JPG, JPEG, WEBP, GIF (Max 10MB)';
+            fileInput.accept = 'image/*';
+        } else if (mediaType === 'video') {
+            hint.textContent = 'Supported formats: MP4, WEBM, MOV, AVI (Max 10MB)';
+            fileInput.accept = 'video/*';
+        }
+    } else {
+        section.style.display = 'none';
+        fileInput.value = '';
+    }
+}
+
+// Set initial state
+document.addEventListener('DOMContentLoaded', function() {
+    toggleMediaUpload();
+});
+</script>
+
+<style>
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.file-upload-wrapper {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload-wrapper:hover {
+    border-color: #4caf50;
+    background-color: #f0f8f5;
+}
+
+.file-upload-wrapper input[type="file"] {
+    display: block;
+    margin: 0 auto;
+}
+
+.file-upload-wrapper small {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-style: italic;
+}
+</style>
+{% endblock %}

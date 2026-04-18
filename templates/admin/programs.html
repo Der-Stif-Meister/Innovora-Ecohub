@@ -1,0 +1,135 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Programs Management - EcoHub Admin{% endblock %}
+
+{% block content %}
+<div class="admin-content-wrapper">
+    <div class="admin-header">
+        <h1>Programs Management</h1>
+        <p>Manage upcoming programs, webinars, and projects</p>
+    </div>
+
+    <div class="admin-actions">
+        <a href="{{ url_for('admin_programs_add') }}" class="btn btn-primary">+ Add New Program</a>
+    </div>
+
+    {% if programs.items %}
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date & Time</th>
+                        <th>Location</th>
+                        <th>Media</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for program in programs.items %}
+                        <tr>
+                            <td><strong>{{ program.title }}</strong></td>
+                            <td>
+                                <span class="badge badge-{{ program.category }}">
+                                    {{ program.category.title() }}
+                                </span>
+                            </td>
+                            <td>{{ program.event_date.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>{{ program.location or 'N/A' }}</td>
+                            <td>
+                                {% if program.media_filename %}
+                                    <span class="badge badge-info">{{ program.media_type.upper() }}</span>
+                                {% else %}
+                                    <span class="badge badge-secondary">None</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="{{ url_for('admin_programs_edit', program_id=program.id) }}" class="btn btn-sm btn-secondary">Edit</a>
+                                    <form method="POST" action="{{ url_for('admin_programs_delete', program_id=program.id) }}" style="display: inline;">
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {% if programs.has_prev %}
+                <a href="{{ url_for('admin_programs', page=programs.prev_num) }}" class="btn btn-secondary">← Previous</a>
+            {% endif %}
+
+            <span class="pagination-info">
+                Page {{ programs.page }} of {{ programs.pages }}
+            </span>
+
+            {% if programs.has_next %}
+                <a href="{{ url_for('admin_programs', page=programs.next_num) }}" class="btn btn-secondary">Next →</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <i class="fas fa-calendar-plus"></i>
+            <p>No programs yet. Create your first program!</p>
+            <a href="{{ url_for('admin_programs_add') }}" class="btn btn-primary">Add Program</a>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-webinar {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.badge-program {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.badge-project {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.badge-info {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.badge-secondary {
+    background-color: #f5f5f5;
+    color: #757575;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state i {
+    font-size: 48px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+.empty-state p {
+    color: #757575;
+    margin-bottom: 20px;
+}
+</style>
+{% endblock %}

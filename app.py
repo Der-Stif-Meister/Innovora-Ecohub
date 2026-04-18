@@ -51,8 +51,10 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME', 'your-email@gmail
 
 # File Upload Configuration
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads')
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp', 'gif'}
-MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
+ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp', 'gif'}
+ALLOWED_VIDEO_EXTENSIONS = {'mp4', 'webm', 'mov', 'avi'}
+ALLOWED_EXTENSIONS = ALLOWED_IMAGE_EXTENSIONS | ALLOWED_VIDEO_EXTENSIONS
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB for programs/alerts with media
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
@@ -168,15 +170,38 @@ class TeamMember(db.Model):
 
 
 class Alert(db.Model):
-    """Daily alerts displayed on homepage"""
+    """Daily alerts displayed on homepage with media support"""
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=False)
-    message = db.Column(db.Text, nullable=False)
+    message = db.Column(db.Text, nullable=True)
+    media_type = db.Column(db.String(50), default='text')  # "text", "image", "video"
+    media_filename = db.Column(db.String(255), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
-    is_active = db.Column(db.Boolean, default=True)
+    is_active = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f'<Alert {self.title}>'
+
+
+class Program(db.Model):
+    """Upcoming programs, webinars, and projects"""
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False, index=True)
+    description = db.Column(db.Text, nullable=False)
+    category = db.Column(db.String(50), nullable=False)  # "webinar", "program", "project"
+    event_date = db.Column(db.DateTime, nullable=False, index=True)
+    location = db.Column(db.String(255), nullable=True)
+    media_type = db.Column(db.String(50), default='none')  # "image", "video", "none"
+    media_filename = db.Column(db.String(255), nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    def __repr__(self):
+        return f'<Program {self.title}>'
+
+    def is_upcoming(self):
+        """Check if program is in the future"""
+        return self.event_date > datetime.utcnow()
 
 
 # ============================================
@@ -193,9 +218,18 @@ def load_user(user_id):
 # UTILITY FUNCTIONS
 # ============================================
 
-def allowed_file(filename):
+def allowed_file(filename, media_type=None):
     """Check if file extension is allowed"""
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    if '.' not in filename:
+        return False
+    ext = filename.rsplit('.', 1)[1].lower()
+    
+    if media_type == 'image':
+        return ext in ALLOWED_IMAGE_EXTENSIONS
+    elif media_type == 'video':
+        return ext in ALLOWED_VIDEO_EXTENSIONS
+    else:
+        return ext in ALLOWED_EXTENSIONS
 
 
 def get_file_size_mb(size_bytes):
@@ -670,22 +704,45 @@ def admin_alerts():
 @app.route('/admin/alerts/add', methods=['GET', 'POST'])
 @login_required
 def admin_alerts_add():
-    """Add new alert"""
+    """Add new alert with media support"""
     if request.method == 'POST':
         try:
             title = request.form.get('title', '').strip()
             message = request.form.get('message', '').strip()
+            media_type = request.form.get('media_type', 'text')
 
             # Validation
-            if not title or not message:
-                flash('Title and message are required.', 'error')
+            if not title:
+                flash('Title is required.', 'error')
                 return redirect(url_for('admin_alerts_add'))
 
-            # Create alert (automatically set as active)
+            if media_type == 'text' and not message:
+                flash('Message is required for text alerts.', 'error')
+                return redirect(url_for('admin_alerts_add'))
+
+            media_filename = None
+
+            # Handle file upload if media_type is image or video
+            if media_type in ['image', 'video'] and 'media_file' in request.files:
+                file = request.files['media_file']
+                if file and file.filename and allowed_file(file.filename, media_type):
+                    filename = secure_filename(file.filename)
+                    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
+                    filename = timestamp + filename
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    media_filename = filename
+                    logger.info(f'Alert media uploaded: {filename}')
+                elif file and file.filename:
+                    flash(f'Invalid file type for {media_type}. Allowed types: {", ".join(ALLOWED_IMAGE_EXTENSIONS if media_type == "image" else ALLOWED_VIDEO_EXTENSIONS)}', 'error')
+                    return redirect(url_for('admin_alerts_add'))
+
+            # Create alert
             alert = Alert(
                 title=title,
-                message=message,
-                is_active=True
+                message=message if media_type == 'text' else (message or ''),
+                media_type=media_type,
+                media_filename=media_filename,
+                is_active=False  # New alerts start as inactive
             )
             db.session.add(alert)
             db.session.commit()
@@ -730,6 +787,12 @@ def delete_alert(alert_id):
     alert = Alert.query.get_or_404(alert_id)
     
     try:
+        # Delete media file if exists
+        if alert.media_filename:
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], alert.media_filename)
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
         db.session.delete(alert)
         db.session.commit()
 
@@ -741,6 +804,201 @@ def delete_alert(alert_id):
         flash('An error occurred while deleting alert.', 'error')
 
     return redirect(url_for('admin_alerts'))
+
+
+# ============================================
+# PROGRAM MANAGEMENT ROUTES
+# ============================================
+
+@app.route('/admin/programs')
+@login_required
+def admin_programs():
+    """View all programs"""
+    page = request.args.get('page', 1, type=int)
+    programs = Program.query.order_by(Program.event_date.desc()).paginate(page=page, per_page=10)
+    return render_template('admin/programs.html', programs=programs)
+
+
+@app.route('/admin/programs/add', methods=['GET', 'POST'])
+@login_required
+def admin_programs_add():
+    """Add new program/webinar/project"""
+    if request.method == 'POST':
+        try:
+            title = request.form.get('title', '').strip()
+            description = request.form.get('description', '').strip()
+            category = request.form.get('category', 'program').strip()
+            location = request.form.get('location', '').strip()
+            media_type = request.form.get('media_type', 'none')
+
+            # Parse event_date
+            event_date_str = request.form.get('event_date', '')
+            event_time_str = request.form.get('event_time', '12:00')
+
+            # Validation
+            if not all([title, description, category, event_date_str]):
+                flash('Title, description, category, and date are required.', 'error')
+                return redirect(url_for('admin_programs_add'))
+
+            if category not in ['webinar', 'program', 'project']:
+                flash('Invalid category selected.', 'error')
+                return redirect(url_for('admin_programs_add'))
+
+            # Parse datetime
+            try:
+                event_datetime_str = f"{event_date_str} {event_time_str}"
+                event_date = datetime.strptime(event_datetime_str, '%Y-%m-%d %H:%M')
+            except ValueError:
+                flash('Invalid date or time format.', 'error')
+                return redirect(url_for('admin_programs_add'))
+
+            media_filename = None
+
+            # Handle file upload if media_type is not "none"
+            if media_type != 'none' and 'media_file' in request.files:
+                file = request.files['media_file']
+                if file and file.filename and allowed_file(file.filename, media_type):
+                    filename = secure_filename(file.filename)
+                    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
+                    filename = timestamp + filename
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    media_filename = filename
+                    logger.info(f'Program media uploaded: {filename}')
+                elif file and file.filename:
+                    flash(f'Invalid file type for {media_type}. Allowed: {", ".join(ALLOWED_IMAGE_EXTENSIONS if media_type == "image" else ALLOWED_VIDEO_EXTENSIONS)}', 'error')
+                    return redirect(url_for('admin_programs_add'))
+
+            # Create program
+            program = Program(
+                title=title,
+                description=description,
+                category=category,
+                event_date=event_date,
+                location=location if location else None,
+                media_type=media_type,
+                media_filename=media_filename
+            )
+            db.session.add(program)
+            db.session.commit()
+
+            logger.info(f'Program created: {title}')
+            flash(f'Program "{title}" created successfully!', 'success')
+            return redirect(url_for('admin_programs'))
+
+        except Exception as e:
+            logger.error(f'Error creating program: {str(e)}')
+            flash('An error occurred while creating program.', 'error')
+            return redirect(url_for('admin_programs_add'))
+
+    return render_template('admin/programs_add.html')
+
+
+@app.route('/admin/programs/<int:program_id>/edit', methods=['GET', 'POST'])
+@login_required
+def admin_programs_edit(program_id):
+    """Edit program"""
+    program = Program.query.get_or_404(program_id)
+
+    if request.method == 'POST':
+        try:
+            program.title = request.form.get('title', '').strip()
+            program.description = request.form.get('description', '').strip()
+            program.category = request.form.get('category', 'program').strip()
+            program.location = request.form.get('location', '').strip() or None
+            media_type = request.form.get('media_type', 'none')
+
+            # Parse event_date
+            event_date_str = request.form.get('event_date', '')
+            event_time_str = request.form.get('event_time', '12:00')
+
+            # Validation
+            if not all([program.title, program.description, program.category, event_date_str]):
+                flash('Title, description, category, and date are required.', 'error')
+                return redirect(url_for('admin_programs_edit', program_id=program_id))
+
+            # Parse datetime
+            try:
+                event_datetime_str = f"{event_date_str} {event_time_str}"
+                program.event_date = datetime.strptime(event_datetime_str, '%Y-%m-%d %H:%M')
+            except ValueError:
+                flash('Invalid date or time format.', 'error')
+                return redirect(url_for('admin_programs_edit', program_id=program_id))
+
+            # Handle file upload
+            if 'media_file' in request.files:
+                file = request.files['media_file']
+                if file and file.filename and allowed_file(file.filename, media_type):
+                    # Delete old media file if exists
+                    if program.media_filename:
+                        old_file_path = os.path.join(app.config['UPLOAD_FOLDER'], program.media_filename)
+                        if os.path.exists(old_file_path):
+                            os.remove(old_file_path)
+
+                    filename = secure_filename(file.filename)
+                    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
+                    filename = timestamp + filename
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    program.media_filename = filename
+                    logger.info(f'Program media updated: {filename}')
+                elif file and file.filename:
+                    flash(f'Invalid file type. Allowed: {", ".join(ALLOWED_IMAGE_EXTENSIONS if media_type == "image" else ALLOWED_VIDEO_EXTENSIONS)}', 'error')
+                    return redirect(url_for('admin_programs_edit', program_id=program_id))
+
+            program.media_type = media_type
+            program.updated_at = datetime.utcnow()
+
+            db.session.commit()
+
+            logger.info(f'Program updated: {program.title}')
+            flash(f'Program "{program.title}" updated successfully!', 'success')
+            return redirect(url_for('admin_programs'))
+
+        except Exception as e:
+            logger.error(f'Error updating program: {str(e)}')
+            flash('An error occurred while updating program.', 'error')
+            return redirect(url_for('admin_programs_edit', program_id=program_id))
+
+    return render_template('admin/programs_edit.html', program=program)
+
+
+@app.route('/admin/programs/<int:program_id>/delete', methods=['POST'])
+@login_required
+def admin_programs_delete(program_id):
+    """Delete program"""
+    program = Program.query.get_or_404(program_id)
+
+    try:
+        # Delete media file if exists
+        if program.media_filename:
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], program.media_filename)
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+        db.session.delete(program)
+        db.session.commit()
+
+        logger.info(f'Program deleted: {program.title}')
+        flash('Program deleted successfully.', 'success')
+
+    except Exception as e:
+        logger.error(f'Error deleting program: {str(e)}')
+        flash('An error occurred while deleting program.', 'error')
+
+    return redirect(url_for('admin_programs'))
+
+
+# ============================================
+# PUBLIC ROUTES - PROGRAMS & ALERTS
+# ============================================
+
+@app.route('/programs')
+def programs():
+    """Display all upcoming programs"""
+    page = request.args.get('page', 1, type=int)
+    # Show upcoming programs first, then past programs
+    programs = Program.query.order_by(Program.event_date.asc()).paginate(page=page, per_page=12)
+    active_alert = Alert.query.filter_by(is_active=True).order_by(Alert.created_at.desc()).first()
+    return render_template('programs.html', programs=programs, active_alert=active_alert)
 
 
 # ============================================

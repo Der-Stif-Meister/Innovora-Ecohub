@@ -1,0 +1,437 @@
+{% extends "index.html" %}
+
+{% block title %}Upcoming Programs - INNOVORA EcoHub{% endblock %}
+
+{% block extra_content %}
+<!-- Active Alert Banner -->
+{% if active_alert %}
+    <div class="alert-banner" id="alertBanner" style="animation: slideDown 0.5s ease;">
+        <div class="alert-container">
+            {% if active_alert.media_type == 'image' and active_alert.media_filename %}
+                <img src="{{ url_for('static', filename='uploads/' ~ active_alert.media_filename) }}" alt="{{ active_alert.title }}" class="alert-image">
+            {% elif active_alert.media_type == 'video' and active_alert.media_filename %}
+                <video width="100%" height="auto" autoplay muted controls class="alert-video">
+                    <source src="{{ url_for('static', filename='uploads/' ~ active_alert.media_filename) }}">
+                </video>
+            {% elif active_alert.media_type == 'text' %}
+                <div class="alert-text">
+                    <h3>{{ active_alert.title }}</h3>
+                    {% if active_alert.message %}
+                        <p>{{ active_alert.message }}</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        <button class="alert-close" onclick="closeAlert()">×</button>
+    </div>
+{% endif %}
+
+<!-- Programs Section -->
+<section id="programs" class="programs-section">
+    <div class="container">
+        <h1 class="section-title">Upcoming Programs</h1>
+        <p class="section-subtitle">Discover our webinars, programs, and projects designed to drive sustainable innovation</p>
+
+        {% if programs.items %}
+            <div class="programs-grid">
+                {% for program in programs.items %}
+                    <div class="program-card" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+                        <!-- Media Section -->
+                        <div class="program-media">
+                            {% if program.media_filename %}
+                                {% if program.media_type == 'image' %}
+                                    <img src="{{ url_for('static', filename='uploads/' ~ program.media_filename) }}" alt="{{ program.title }}" class="program-image">
+                                {% elif program.media_type == 'video' %}
+                                    <div class="video-container">
+                                        <video width="100%" height="300" controls>
+                                            <source src="{{ url_for('static', filename='uploads/' ~ program.media_filename) }}">
+                                        </video>
+                                    </div>
+                                {% endif %}
+                            {% else %}
+                                <div class="program-placeholder">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Content Section -->
+                        <div class="program-content">
+                            <div class="program-header">
+                                <span class="program-badge badge-{{ program.category }}">
+                                    {{ program.category.upper() }}
+                                </span>
+                                {% if program.is_upcoming() %}
+                                    <span class="program-status upcoming">UPCOMING</span>
+                                {% endif %}
+                            </div>
+
+                            <h3 class="program-title">{{ program.title }}</h3>
+
+                            <div class="program-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar"></i>
+                                    {{ program.event_date.strftime('%B %d, %Y') }}
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    {{ program.event_date.strftime('%H:%M') }}
+                                </div>
+                                {% if program.location %}
+                                    <div class="meta-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        {{ program.location }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <p class="program-description">{{ program.description[:150] }}{% if program.description|length > 150 %}...{% endif %}</p>
+
+                            <button class="btn btn-secondary" onclick="toggleDetails(this)">Learn More</button>
+
+                            <!-- Expanded Details (Hidden by default) -->
+                            <div class="program-details" style="display: none;">
+                                <p class="program-full-description">{{ program.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-section">
+                {% if programs.has_prev %}
+                    <a href="{{ url_for('programs', page=programs.prev_num) }}" class="btn btn-secondary">← Previous</a>
+                {% endif %}
+
+                <span class="pagination-info">
+                    Page {{ programs.page }} of {{ programs.pages }}
+                </span>
+
+                {% if programs.has_next %}
+                    <a href="{{ url_for('programs', page=programs.next_num) }}" class="btn btn-secondary">Next →</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="empty-programs">
+                <i class="fas fa-calendar-times"></i>
+                <h3>No Upcoming Programs</h3>
+                <p>Check back soon for new webinars, programs, and projects!</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+/* Alert Banner Styles */
+.alert-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    position: relative;
+    border-bottom: 4px solid #764ba2;
+}
+
+.alert-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.alert-image {
+    max-width: 300px;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.alert-video {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.alert-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.alert-text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.alert-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.alert-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Programs Section */
+.programs-section {
+    padding: 80px 20px;
+    background: #f9f9f9;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.program-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.program-media {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.program-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-container {
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 48px;
+}
+
+.program-content {
+    padding: 25px;
+}
+
+.program-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.program-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-webinar {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.badge-program {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.badge-project {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.program-status {
+    background-color: #ffebee;
+    color: #c62828;
+    margin-left: auto;
+}
+
+.program-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.program-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.meta-item {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meta-item i {
+    color: #4caf50;
+    width: 16px;
+}
+
+.program-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.program-full-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    margin: 15px 0 0 0;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.program-card .btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.empty-programs {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-programs i {
+    font-size: 64px;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+.empty-programs h3 {
+    font-size: 28px;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.empty-programs p {
+    font-size: 16px;
+    color: #999;
+}
+
+.pagination-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.pagination-info {
+    color: #666;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alert-container {
+        flex-direction: column;
+    }
+
+    .alert-image {
+        max-width: 100%;
+    }
+}
+</style>
+
+<script>
+function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    button.textContent = details.style.display === 'none' ? 'Learn More' : 'Show Less';
+}
+
+function closeAlert() {
+    const banner = document.getElementById('alertBanner');
+    banner.style.animation = 'slideUp 0.5s ease';
+    setTimeout(() => {
+        banner.style.display = 'none';
+    }, 500);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+</script>
+{% endblock %}

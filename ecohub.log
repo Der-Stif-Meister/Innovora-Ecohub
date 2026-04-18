@@ -998,3 +998,12 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'projec
  * Running on http://127.0.0.1:5000
  * Running on http://10.163.36.186:5000
 2026-04-17 19:09:16,869 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-17 19:11:38,149 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:11:38] "GET /admin/register HTTP/1.1" 200 -
+2026-04-17 19:11:38,700 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-17 19:11:38,707 - werkzeug - INFO - 127.0.0.1 - - [17/Apr/2026 19:11:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-18 11:13:01,978 - werkzeug - INFO - 127.0.0.1 - - [18/Apr/2026 11:13:01] "[32mGET /admin HTTP/1.1[0m" 302 -
+2026-04-18 11:13:02,085 - werkzeug - INFO - 127.0.0.1 - - [18/Apr/2026 11:13:02] "GET /admin/login HTTP/1.1" 200 -
+2026-04-18 11:13:21,525 - __main__ - WARNING - Failed login attempt for username: IT DEPARTMENT from 127.0.0.1
+2026-04-18 11:13:21,534 - werkzeug - INFO - 127.0.0.1 - - [18/Apr/2026 11:13:21] "POST /admin/login HTTP/1.1" 200 -
+2026-04-18 11:13:21,844 - __main__ - WARNING - 404 error: /favicon.ico
+2026-04-18 11:13:21,850 - werkzeug - INFO - 127.0.0.1 - - [18/Apr/2026 11:13:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

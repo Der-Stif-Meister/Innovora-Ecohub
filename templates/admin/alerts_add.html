@@ -1,189 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Alert - INNOVORA EcoHub Admin</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+{% extends "admin/base.html" %}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            color: #333;
-        }
+{% block title %}Add Alert - EcoHub Admin{% endblock %}
 
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .form-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-card h1 {
-            color: #1e4226;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #1e4226;
-            font-weight: 600;
-        }
-
-        small {
-            display: block;
-            margin-top: 0.25rem;
-            color: #999;
-            font-size: 0.85rem;
-        }
-
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #66cc33;
-            box-shadow: 0 0 0 3px rgba(102, 204, 51, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .form-info {
-            background: rgba(102, 204, 51, 0.1);
-            border-left: 4px solid #66cc33;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-info p {
-            margin: 0;
-            color: #1e4226;
-            font-size: 0.95rem;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            flex: 1;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #1e4226, #66cc33);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: #e0e0e0;
-            color: #333;
-        }
-
-        .btn-secondary:hover {
-            background: #d0d0d0;
-        }
-
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="form-card">
-            <h1>Create New Alert</h1>
-
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">{{ message }}</div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-            <form method="POST">
-                <div class="form-group">
-                    <label for="title">Alert Title *</label>
-                    <input type="text" id="title" name="title" required 
-                           placeholder="e.g., System Maintenance"
-                           autocomplete="off">
-                    <small>Short, attention-grabbing title</small>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required 
-                              placeholder="Enter the alert message..."></textarea>
-                    <small>This will be displayed as a banner on the homepage</small>
-                </div>
-
-                <div class="form-info">
-                    <p><strong>📌 Note:</strong> When you create an alert, it will automatically be set as active and displayed on the homepage immediately.</p>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Create Alert</button>
-                    <a href="{{ url_for('admin_alerts') }}" class="btn btn-secondary">Cancel</a>
-                </div>
-            </form>
-        </div>
+{% block content %}
+<div class="admin-content-wrapper">
+    <div class="admin-header">
+        <h1>Create New Alert</h1>
+        <p>Add text, image, or video alerts to display on the homepage</p>
     </div>
-</body>
-</html>
+
+    <form method="POST" enctype="multipart/form-data" class="admin-form">
+        <div class="form-group">
+            <label for="title">Alert Title *</label>
+            <input type="text" id="title" name="title" required placeholder="e.g., Important Announcement">
+        </div>
+
+        <div class="form-group">
+            <label for="media_type">Media Type *</label>
+            <select id="media_type" name="media_type" onchange="toggleMediaFields()">
+                <option value="text">Text Only</option>
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+            </select>
+        </div>
+
+        <div id="message-section">
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter the alert message..."></textarea>
+                <small id="message-hint">Required for text alerts. Optional for image/video alerts.</small>
+            </div>
+        </div>
+
+        <div id="media-section" style="display: none;">
+            <div class="form-group">
+                <label for="media_file">Upload Media File *</label>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="media_file" name="media_file" accept="image/*">
+                    <small id="media-hint"></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-info">
+            <p><strong>📌 Note:</strong> Only one alert can be active at a time. New alerts start as inactive and can be activated from the alerts management page.</p>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create Alert</button>
+            <a href="{{ url_for('admin_alerts') }}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+function toggleMediaFields() {
+    const mediaType = document.getElementById('media_type').value;
+    const mediaSection = document.getElementById('media-section');
+    const messageSection = document.getElementById('message-section');
+    const messageInput = document.getElementById('message');
+    const fileInput = document.getElementById('media_file');
+    const hint = document.getElementById('media-hint');
+    const messageHint = document.getElementById('message-hint');
+
+    if (mediaType === 'text') {
+        mediaSection.style.display = 'none';
+        messageSection.style.display = 'block';
+        messageInput.required = true;
+        messageHint.textContent = 'Required for text alerts.';
+        fileInput.required = false;
+    } else if (mediaType === 'image') {
+        mediaSection.style.display = 'block';
+        messageSection.style.display = 'block';
+        messageInput.required = false;
+        messageHint.textContent = 'Optional for image alerts.';
+        fileInput.required = true;
+        fileInput.accept = 'image/*';
+        hint.textContent = 'Supported: PNG, JPG, JPEG, WEBP, GIF (Max 10MB)';
+    } else if (mediaType === 'video') {
+        mediaSection.style.display = 'block';
+        messageSection.style.display = 'block';
+        messageInput.required = false;
+        messageHint.textContent = 'Optional for video alerts.';
+        fileInput.required = true;
+        fileInput.accept = 'video/*';
+        hint.textContent = 'Supported: MP4, WEBM, MOV, AVI (Max 10MB)';
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    toggleMediaFields();
+});
+</script>
+
+<style>
+.form-info {
+    background: linear-gradient(135deg, rgba(102, 204, 51, 0.1), rgba(102, 204, 51, 0.05));
+    border-left: 4px solid #66cc33;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.form-info p {
+    margin: 0;
+    color: #1e4226;
+}
+
+.file-upload-wrapper {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.file-upload-wrapper:hover {
+    border-color: #66cc33;
+    background-color: #f0f8f5;
+}
+
+.file-upload-wrapper input[type="file"] {
+    display: block;
+    margin: 0 auto;
+}
+
+.file-upload-wrapper small {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+}
+</style>
+{% endblock %}
