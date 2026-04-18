@@ -569,15 +569,48 @@ def admin_team():
     """View all team members"""
     try:
         page = request.args.get('page', 1, type=int)
+        per_page = 12
         
-        # Try new paginate syntax first (Flask-SQLAlchemy 3.0+)
-        try:
-            team_members = TeamMember.query.order_by(TeamMember.created_at.desc()).paginate(page=page, per_page=12)
-        except TypeError:
-            # Fallback to older syntax if new method doesn't work
-            team_members = TeamMember.query.order_by(TeamMember.created_at.desc()).paginate(page, 12, False)
+        # Use a simple approach: fetch all and slice
+        all_members = TeamMember.query.order_by(TeamMember.created_at.desc()).all()
         
-        logger.info(f'[ADMIN TEAM] Successfully loaded team members page {page}')
+        # Calculate pagination
+        total = len(all_members)
+        start = (page - 1) * per_page
+        end = start + per_page
+        team_members_list = all_members[start:end]
+        
+        # Create a simple pagination object
+        class SimplePagination:
+            def __init__(self, items, page, per_page, total):
+                self.items = items
+                self.page = page
+                self.per_page = per_page
+                self.total = total
+            
+            @property
+            def pages(self):
+                return (self.total + self.per_page - 1) // self.per_page
+            
+            @property
+            def has_prev(self):
+                return self.page > 1
+            
+            @property
+            def has_next(self):
+                return self.page < self.pages
+            
+            @property
+            def prev_num(self):
+                return self.page - 1 if self.has_prev else None
+            
+            @property
+            def next_num(self):
+                return self.page + 1 if self.has_next else None
+        
+        team_members = SimplePagination(team_members_list, page, per_page, total)
+        
+        logger.info(f'[ADMIN TEAM] Successfully loaded team members page {page} ({total} total members)')
         return render_template('admin/team.html', team_members=team_members)
     
     except Exception as e:
