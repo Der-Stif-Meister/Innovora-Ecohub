@@ -219,17 +219,26 @@ def load_user(user_id):
 # ============================================
 
 def allowed_file(filename, media_type=None):
-    """Check if file extension is allowed"""
+    """Check if file extension is allowed - WITH LOGGING"""
     if '.' not in filename:
+        logger.warning(f'[FILE VALIDATION] File has no extension: {filename}')
         return False
+    
     ext = filename.rsplit('.', 1)[1].lower()
+    logger.info(f'[FILE VALIDATION] Checking file: {filename}, Extension: {ext}, Media Type: {media_type}')
     
     if media_type == 'image':
-        return ext in ALLOWED_IMAGE_EXTENSIONS
+        is_allowed = ext in ALLOWED_IMAGE_EXTENSIONS
+        logger.info(f'[FILE VALIDATION] Image file check: {filename} -> {"ALLOWED" if is_allowed else "REJECTED"}')
+        return is_allowed
     elif media_type == 'video':
-        return ext in ALLOWED_VIDEO_EXTENSIONS
+        is_allowed = ext in ALLOWED_VIDEO_EXTENSIONS
+        logger.info(f'[FILE VALIDATION] Video file check: {filename} -> {"ALLOWED" if is_allowed else "REJECTED"}')
+        return is_allowed
     else:
-        return ext in ALLOWED_EXTENSIONS
+        is_allowed = ext in ALLOWED_EXTENSIONS
+        logger.info(f'[FILE VALIDATION] Generic file check: {filename} -> {"ALLOWED" if is_allowed else "REJECTED"}')
+        return is_allowed
 
 
 def get_file_size_mb(size_bytes):
@@ -540,40 +549,81 @@ def admin_team():
 @app.route('/admin/team/add', methods=['GET', 'POST'])
 @login_required
 def admin_team_add():
-    """Add new team member"""
+    """Add new team member - SAFE FORM HANDLER"""
     if request.method == 'POST':
         try:
+            # Get form data and strip whitespace
             name = request.form.get('name', '').strip()
             role = request.form.get('role', '').strip()
-            department = request.form.get('department', '').strip()
-            bio = request.form.get('bio', '').strip()
-            email = request.form.get('email', '').strip()
+            department = request.form.get('department', '').strip() or None
+            bio = request.form.get('bio', '').strip() or None
+            email = request.form.get('email', '').strip() or None
             show_email = request.form.get('show_email') == 'on'
             
-            linkedin_url = request.form.get('linkedin_url', '').strip()
-            twitter_url = request.form.get('twitter_url', '').strip()
-            facebook_url = request.form.get('facebook_url', '').strip()
-            tiktok_url = request.form.get('tiktok_url', '').strip()
-            other_url = request.form.get('other_url', '').strip()
+            # Social media URLs
+            linkedin_url = request.form.get('linkedin_url', '').strip() or None
+            twitter_url = request.form.get('twitter_url', '').strip() or None
+            facebook_url = request.form.get('facebook_url', '').strip() or None
+            tiktok_url = request.form.get('tiktok_url', '').strip() or None
+            other_url = request.form.get('other_url', '').strip() or None
             
-            # Validation
-            if not name or not role:
-                flash('Name and role are required.', 'error')
+            logger.info(f'[TEAM ADD] Form submission received from admin {current_user.username}')
+            logger.info(f'[TEAM ADD] Name: {name}, Role: {role}')
+            
+            # ============ VALIDATION ============
+            if not name:
+                flash('❌ Name is required.', 'error')
+                logger.warning('[TEAM ADD] Validation failed: Missing name')
                 return redirect(url_for('admin_team_add'))
-
-            # Handle image upload
+            
+            if not role:
+                flash('❌ Role is required.', 'error')
+                logger.warning('[TEAM ADD] Validation failed: Missing role')
+                return redirect(url_for('admin_team_add'))
+            
+            if len(name) > 120:
+                flash('❌ Name must be less than 120 characters.', 'error')
+                logger.warning('[TEAM ADD] Validation failed: Name too long')
+                return redirect(url_for('admin_team_add'))
+            
+            if len(role) > 120:
+                flash('❌ Role must be less than 120 characters.', 'error')
+                logger.warning('[TEAM ADD] Validation failed: Role too long')
+                return redirect(url_for('admin_team_add'))
+            
+            if email and '@' not in email:
+                flash('❌ Invalid email address format.', 'error')
+                logger.warning('[TEAM ADD] Validation failed: Invalid email')
+                return redirect(url_for('admin_team_add'))
+            
+            # ============ IMAGE UPLOAD HANDLING ============
             image_filename = None
             if 'image' in request.files:
                 file = request.files['image']
-                if file and file.filename and allowed_file(file.filename):
-                    filename = secure_filename(file.filename)
-                    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
-                    image_filename = timestamp + 'team_' + filename
-                    file_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
-                    file.save(file_path)
-                    logger.info(f'Team image uploaded: {image_filename}')
-
-            # Create team member
+                if file and file.filename:
+                    logger.info(f'[TEAM ADD] Image file received: {file.filename}')
+                    
+                    if allowed_file(file.filename, 'image'):
+                        filename = secure_filename(file.filename)
+                        timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S_')
+                        image_filename = timestamp + 'team_' + filename
+                        file_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+                        
+                        try:
+                            file.save(file_path)
+                            logger.info(f'[TEAM ADD] ✅ Image saved successfully: {image_filename}')
+                        except Exception as e:
+                            logger.error(f'[TEAM ADD] ❌ Error saving image: {str(e)}')
+                            flash(f'❌ Failed to save image: {str(e)}', 'error')
+                            return redirect(url_for('admin_team_add'))
+                    else:
+                        flash('❌ Invalid image format. Please use PNG, JPG, JPEG, or WEBP.', 'error')
+                        logger.warning(f'[TEAM ADD] Validation failed: Invalid image format - {file.filename}')
+                        return redirect(url_for('admin_team_add'))
+            
+            # ============ DATABASE INSERTION ============
+            logger.info('[TEAM ADD] Creating TeamMember object...')
+            
             team_member = TeamMember(
                 name=name,
                 role=role,
@@ -588,16 +638,22 @@ def admin_team_add():
                 tiktok_url=tiktok_url,
                 other_url=other_url
             )
+            
             db.session.add(team_member)
+            db.session.flush()  # Flush to get the ID without committing
+            
+            logger.info(f'[TEAM ADD] Team member object created with ID: {team_member.id}')
+            
             db.session.commit()
-
-            logger.info(f'Team member added: {name} ({role})')
-            flash(f'Team member "{name}" added successfully!', 'success')
+            
+            logger.info(f'[TEAM ADD] ✅ Team member "{name}" ({role}) added successfully with ID {team_member.id}')
+            flash(f'✅ Team member "{name}" added successfully!', 'success')
             return redirect(url_for('admin_team'))
 
         except Exception as e:
-            logger.error(f'Error adding team member: {str(e)}')
-            flash('An error occurred while adding team member.', 'error')
+            db.session.rollback()
+            logger.error(f'[TEAM ADD] ❌ CRITICAL ERROR: {str(e)}', exc_info=True)
+            flash(f'❌ An error occurred while adding team member: {str(e)}', 'error')
             return redirect(url_for('admin_team_add'))
 
     return render_template('admin/team_add.html')
