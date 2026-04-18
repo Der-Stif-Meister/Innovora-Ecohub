@@ -567,9 +567,23 @@ def mark_message_read(message_id):
 @login_required
 def admin_team():
     """View all team members"""
-    page = request.args.get('page', 1, type=int)
-    team_members = TeamMember.query.order_by(TeamMember.created_at.desc()).paginate(page=page, per_page=12)
-    return render_template('admin/team.html', team_members=team_members)
+    try:
+        page = request.args.get('page', 1, type=int)
+        
+        # Try new paginate syntax first (Flask-SQLAlchemy 3.0+)
+        try:
+            team_members = TeamMember.query.order_by(TeamMember.created_at.desc()).paginate(page=page, per_page=12)
+        except TypeError:
+            # Fallback to older syntax if new method doesn't work
+            team_members = TeamMember.query.order_by(TeamMember.created_at.desc()).paginate(page, 12, False)
+        
+        logger.info(f'[ADMIN TEAM] Successfully loaded team members page {page}')
+        return render_template('admin/team.html', team_members=team_members)
+    
+    except Exception as e:
+        logger.error(f'[ADMIN TEAM] Error loading team members: {str(e)}', exc_info=True)
+        flash(f'Error loading team members: {str(e)}', 'error')
+        return redirect(url_for('admin_dashboard'))
 
 
 @app.route('/admin/team/add', methods=['GET', 'POST'])
