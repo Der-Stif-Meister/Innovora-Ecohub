@@ -1178,9 +1178,15 @@ def project_cocoa():
 
 @app.route('/')
 def index():
-    """Homepage - pass active alert"""
+    """Homepage - pass active alert and upcoming programs"""
     active_alert = Alert.query.filter_by(is_active=True).order_by(Alert.created_at.desc()).first()
-    return render_template('index.html', active_alert=active_alert)
+    
+    # Fetch upcoming programs (next 6 items, sorted by date ascending)
+    upcoming_programs = Program.query.filter(
+        Program.event_date >= datetime.utcnow()
+    ).order_by(Program.event_date.asc()).limit(6).all()
+    
+    return render_template('index.html', active_alert=active_alert, upcoming_programs=upcoming_programs)
 
 
 @app.route('/contact', methods=['POST'])

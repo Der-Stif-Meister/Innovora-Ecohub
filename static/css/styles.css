@@ -1658,6 +1658,182 @@ p {
 }
 
 /* ============================================
+   UPCOMING PROGRAMS SECTION
+   ============================================ */
+
+.upcoming-programs-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(30, 66, 38, 0.05), rgba(102, 204, 51, 0.05));
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.program-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.program-media {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+    overflow: hidden;
+}
+
+.program-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover .program-image {
+    transform: scale(1.05);
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+}
+
+.program-content {
+    padding: 1.5rem;
+}
+
+.program-header {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.program-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-webinar {
+    background: rgba(102, 204, 51, 0.2);
+    color: var(--accent-green);
+}
+
+.badge-program {
+    background: rgba(30, 66, 38, 0.2);
+    color: var(--primary-green);
+}
+
+.badge-project {
+    background: rgba(139, 179, 54, 0.2);
+    color: var(--light-green);
+}
+
+.program-status {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.program-status.upcoming {
+    background: rgba(102, 204, 51, 0.3);
+    color: var(--accent-green);
+}
+
+.program-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-green);
+    line-height: 1.4;
+}
+
+.program-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(30, 66, 38, 0.1);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta-item i {
+    color: var(--accent-green);
+    font-size: 0.85rem;
+}
+
+.program-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.program-full-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.program-details {
+    margin-top: 1rem;
+}
+
+.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -1829,6 +2005,41 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    .programs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .program-card {
+        border-radius: 10px;
+    }
+
+    .program-media {
+        height: 200px;
+    }
+
+    .program-content {
+        padding: 1.2rem;
+    }
+
+    .program-title {
+        font-size: 1.1rem;
+    }
+
+    .program-meta {
+        font-size: 0.85rem;
+    }
+
+    .program-description {
+        font-size: 0.9rem;
+    }
+
+    .upcoming-programs-section {
+        padding: 3rem 0;
+    }
+}
+
 @media (max-width: 480px) {
     .section-title {
         font-size: 1.5rem;
@@ -1866,5 +2077,39 @@ p {
 
     .social-links {
         justify-content: center;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .program-card {
+        border-radius: 8px;
+    }
+
+    .program-media {
+        height: 180px;
+    }
+
+    .program-content {
+        padding: 1rem;
+    }
+
+    .program-title {
+        font-size: 1rem;
+    }
+
+    .program-meta {
+        font-size: 0.8rem;
+    }
+
+    .program-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .upcoming-programs-section {
+        padding: 2rem 0;
     }
 }

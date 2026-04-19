@@ -201,6 +201,79 @@
         </div>
     </section>
 
+    <!-- UPCOMING PROGRAMS SECTION -->
+    {% if upcoming_programs %}
+    <section id="upcoming-programs" class="upcoming-programs-section">
+        <div class="container">
+            <h2 class="section-title">🚀 Upcoming Programs & Webinars</h2>
+            <p class="section-subtitle">Join us for inspiring events, webinars, and programs designed to accelerate your sustainability journey</p>
+            
+            <div class="programs-grid">
+                {% for program in upcoming_programs %}
+                <div class="program-card" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+                    <!-- Media Section -->
+                    <div class="program-media">
+                        {% if program.media_filename %}
+                            {% if program.media_type == 'image' %}
+                                <img src="{{ url_for('static', filename='uploads/' ~ program.media_filename) }}" alt="{{ program.title }}" class="program-image">
+                            {% elif program.media_type == 'video' %}
+                                <div class="video-container">
+                                    <video width="100%" height="250" controls style="border-radius: 10px;">
+                                        <source src="{{ url_for('static', filename='uploads/' ~ program.media_filename) }}">
+                                    </video>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            <div class="program-placeholder">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="program-content">
+                        <div class="program-header">
+                            <span class="program-badge badge-{{ program.category }}">
+                                {{ program.category.upper() }}
+                            </span>
+                        </div>
+
+                        <h3 class="program-title">{{ program.title }}</h3>
+
+                        <div class="program-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                {{ program.event_date.strftime('%B %d, %Y') }}
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                {{ program.event_date.strftime('%H:%M') }}
+                            </div>
+                            {% if program.location %}
+                                <div class="meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ program.location }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <p class="program-description">{{ program.description[:120] }}{% if program.description|length > 120 %}...{% endif %}</p>
+
+                        <a href="{{ url_for('programs') }}" class="btn btn-secondary btn-small">View All Programs</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% if upcoming_programs|length < 6 %}
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="{{ url_for('programs') }}" class="btn btn-primary">See All Programs</a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
         <div class="container">
