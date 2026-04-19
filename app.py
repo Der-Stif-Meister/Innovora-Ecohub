@@ -416,7 +416,7 @@ def admin_register():
     return render_template('admin/register.html', admin_exists=admin_exists)
 
 
-@app.route('/admin/logout')
+@app.route('/admin/logout', endpoint='admin_logout')
 @login_required
 def admin_logout():
     """Admin logout"""
