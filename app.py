@@ -35,10 +35,23 @@ app.config['DEBUG'] = True  # Enable debug mode for local development
 
 # Database Configuration
 BASE_DIR = Path(__file__).resolve().parent
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-    'DATABASE_URL',
-    f'sqlite:///{BASE_DIR}/ecohub.db'
-)
+
+# Support both SQLite (development) and PostgreSQL (production)
+database_url = os.getenv('DATABASE_URL')
+
+if database_url:
+    # PostgreSQL/Supabase production database
+    if database_url.startswith('postgres://'):
+        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        'connect_args': {'sslmode': 'require'}
+    }
+else:
+    # SQLite development database
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{BASE_DIR}/ecohub.db'
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {}
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Email Configuration (Gmail SMTP)
@@ -66,7 +79,10 @@ Path(UPLOAD_FOLDER).mkdir(parents=True, exist_ok=True)
 # EXTENSIONS INITIALIZATION
 # ============================================
 
+from flask_migrate import Migrate
+
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)  # Initialize Flask-Migrate for database migrations
 mail = Mail(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'admin_login'
